@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "background_videos",
+  "info": {
+    "singularName": "background-video",
+    "pluralName": "background-videos",
+    "displayName": "background-video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "background_video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

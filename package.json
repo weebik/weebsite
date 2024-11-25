@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "wait-on": "^8.0.1"
+  },
+  "scripts": {
+    "dev": "concurrently 'cd backend && npm run develop' './node_modules/.bin/wait-on http://localhost:1337 && cd frontend && npm run dev' "
+  }
+}
