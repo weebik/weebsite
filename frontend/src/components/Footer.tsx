@@ -13,7 +13,7 @@ function Footer() {
         backgroundImage: `url(${footerBackground})`,
         backgroundSize: "cover",
         width: "100%",
-        height: "15vh",
+        height: "120px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
