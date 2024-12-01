@@ -1,0 +1,22 @@
+.contact-background {
+  width: 100%;
+  position: relative;
+  filter: opacity(30%);
+  z-index: -1;
+  margin-top: -25%;
+  overflow: hidden;
+}
+
+.contact-content {
+  height: calc(100vh - 400px);
+  background: url("../assets/contact-background.svg") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  margin-top: -20%;
+  padding: 5vh 20vw;
+  filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
+}

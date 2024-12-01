@@ -5,7 +5,7 @@ import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 
 const routes = [
-  { path: "/", Component: LandingPage },
+  { path: "/lander", Component: LandingPage },
   { path: "/home", Component: Home },
   { path: "/about-me", Component: AboutMe },
   { path: "/portfolio", Component: Portfolio },

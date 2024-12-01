@@ -1,4 +1,5 @@
 body {
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
   background: rgba(22, 34, 55);
   background: linear-gradient(
@@ -7,4 +8,14 @@ body {
     rgba(21, 28, 53, 1) 100%
   );
   margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+#root {
+  --bg: rgba(22, 34, 55);
+  --clr1:
+  --clr2:
+  --clr3:
+  --clr4:
+  min-height: 100vh;
 }

@@ -6,20 +6,18 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import "../styles/footer.css";
 
-function Footer({ isLandingPage }: { isLandingPage: boolean }) {
+function Footer() {
   return (
     <Box
       sx={{
         backgroundImage: `url(${footerBackground})`,
         backgroundSize: "cover",
-        position: isLandingPage ? "fixed" : "static",
-        left: 0,
-        bottom: isLandingPage ? 0 : "auto",
         width: "100%",
-        height: "120px",
+        height: "150px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        marginTop: "auto",
       }}
     >
       <Box

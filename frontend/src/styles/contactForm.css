@@ -1,0 +1,13 @@
+.mail-container {
+  font-size: 2rem;
+  z-index: -1;
+  width: 100%;
+  border-radius: 2vw;
+  padding: 5%;
+  background: rgba(32, 46, 66, 1);
+  background: linear-gradient(
+    180deg,
+    rgba(32, 46, 66, 1) 0%,
+    rgba(33, 32, 71, 1) 100%
+  );
+}
