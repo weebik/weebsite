@@ -18,6 +18,7 @@ function Footer() {
         alignItems: "center",
         justifyContent: "center",
         marginTop: "auto",
+        zIndex: "1000",
       }}
     >
       <Box

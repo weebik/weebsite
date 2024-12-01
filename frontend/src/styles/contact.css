@@ -8,15 +8,60 @@
 }
 
 .contact-content {
-  height: calc(100vh - 400px);
+  height: calc(100vh);
   background: url("../assets/contact-background.svg") no-repeat;
   background-size: cover;
+  background-position: default;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 3;
   margin-top: -20%;
-  padding: 5vh 20vw;
   filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
+}
+
+.contact-title {
+  position: fixed;
+  top: 80px;
+}
+
+.contact-form {
+  position: fixed;
+  width: 50vw;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: -120px;
+}
+
+@media screen and (max-width: 1050px) {
+  .contact-content {
+    height: calc(100vh);
+    background: url("../assets/contact-background.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20%;
+    filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
+  }
+  .contact-form {
+    position: fixed;
+    width: 80%;
+    min-width: 300px;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

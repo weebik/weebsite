@@ -2,7 +2,6 @@ import { AppBar, Toolbar, Typography, Fab } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ReactNode } from "react";
 import { useLanguage } from "../hooks/useLanguage";
-import Footer from "../components/Footer";
 import english from "../assets/english.svg";
 import polish from "../assets/polish.svg";
 import "../styles/navBar.css";
@@ -12,7 +11,7 @@ function Layout({ children }: { children: ReactNode }) {
 
   const translations = {
     pl: {
-      home: "Strona Główna",
+      home: "Główna",
       aboutMe: "O mnie",
       portfolio: "Portfolio",
       contact: "Kontakt",
@@ -40,7 +39,13 @@ function Layout({ children }: { children: ReactNode }) {
       >
         <Toolbar className="navBar">
           <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
-            <Typography fontSize="1.5rem" fontWeight={700} variant="button">
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
+                fontWeight: 700,
+                variant: "button",
+              }}
+            >
               {translations[language].home}
             </Typography>
           </Link>
@@ -48,7 +53,13 @@ function Layout({ children }: { children: ReactNode }) {
             to="/about-me"
             style={{ textDecoration: "none", color: "white" }}
           >
-            <Typography fontSize="1.5rem" fontWeight={700} variant="button">
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
+                fontWeight: 700,
+                variant: "button",
+              }}
+            >
               {translations[language].aboutMe}
             </Typography>
           </Link>
@@ -56,7 +67,13 @@ function Layout({ children }: { children: ReactNode }) {
             to="/portfolio"
             style={{ textDecoration: "none", color: "white" }}
           >
-            <Typography fontSize="1.5rem" fontWeight={700} variant="button">
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
+                fontWeight: 700,
+                variant: "button",
+              }}
+            >
               {translations[language].portfolio}
             </Typography>
           </Link>
@@ -64,7 +81,13 @@ function Layout({ children }: { children: ReactNode }) {
             to="/contact"
             style={{ textDecoration: "none", color: "white" }}
           >
-            <Typography fontSize="1.5rem" fontWeight={700} variant="button">
+            <Typography
+              sx={{
+                fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
+                fontWeight: 700,
+                variant: "button",
+              }}
+            >
               {translations[language].contact}
             </Typography>
           </Link>
@@ -82,7 +105,6 @@ function Layout({ children }: { children: ReactNode }) {
         </Fab>
       </AppBar>
       {children}
-      <Footer />
     </>
   );
 }

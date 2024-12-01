@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
 import "../styles/landingPage.css";
+import Footer from "../components/Footer";
 
 function LandingPage() {
   const { language } = useLanguage();
@@ -104,6 +105,7 @@ function LandingPage() {
           </AnimatePresence>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
