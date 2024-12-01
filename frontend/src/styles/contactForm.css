@@ -10,4 +10,5 @@
     rgba(32, 46, 66, 1) 0%,
     rgba(33, 32, 71, 1) 100%
   );
+  box-sizing: border-box;
 }

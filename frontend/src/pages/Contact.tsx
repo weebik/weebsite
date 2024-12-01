@@ -17,7 +17,7 @@ function Contact() {
   };
 
   return (
-    <>
+    <div className="contact-page">
       <video
         className="contact-background"
         autoPlay
@@ -27,26 +27,28 @@ function Contact() {
         src="/assets/background.mp4"
         onContextMenu={(e) => e.preventDefault()}
       />
-      <div className="contact-content">
-        <div className="contact-title">
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            color="white"
-            marginBottom="5vh"
-            sx={{ fontSize: { xs: "10vw", sm: "7vw", md: "3.5vw" } }}
-          >
-            {translations[language].title}
-          </Typography>
+      <div className="contact-container">
+        <div className="contact-content">
+          <div className="contact-title">
+            <Typography
+              variant="h2"
+              fontWeight="bold"
+              color="white"
+              marginBottom="5vh"
+              sx={{ fontSize: { xs: "7vw", sm: "6vw", md: "3.5vw" } }}
+            >
+              {translations[language].title}
+            </Typography>
+          </div>
+          <div className="contact-form">
+            <ContactForm />
+          </div>
         </div>
-        <div className="contact-form">
-          <ContactForm />
+        <div className="contact-footer">
+          <Footer />
         </div>
       </div>
-      <div className="contact-footer">
-        <Footer />
-      </div>
-    </>
+    </div>
   );
 }
 

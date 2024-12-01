@@ -1,3 +1,8 @@
+.contact-page {
+  width: 100%;
+  height: 100%;
+}
+
 .contact-background {
   width: 100%;
   position: relative;
@@ -8,31 +13,31 @@
 }
 
 .contact-content {
-  height: calc(100vh);
   background: url("../assets/contact-background.svg") no-repeat;
-  background-size: cover;
-  background-position: default;
+  background-size: 100% 100%;
+  width: 100%;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: -20%;
+  padding-bottom: 200px;
   filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
 }
 
 .contact-title {
-  position: fixed;
-  top: 80px;
+  font-size: 3rem;
+  margin-top: 80px;
+  z-index: 10;
 }
 
 .contact-form {
-  position: fixed;
   width: 50vw;
-  top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .contact-footer {
@@ -41,16 +46,12 @@
   margin-top: -120px;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 800px) {
   .contact-content {
-    height: calc(100vh);
+    height: 80vh;
     background: url("../assets/contact-background.svg") no-repeat;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: -20%;
     filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
   }
@@ -59,9 +60,5 @@
     width: 80%;
     min-width: 300px;
     top: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
