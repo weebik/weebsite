@@ -32,8 +32,7 @@ function Layout({ children }: { children: ReactNode }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          maxHeight: "100px",
-          height: "10vh",
+          height: "100px",
           background: "transparent",
           boxShadow: "none",
         }}

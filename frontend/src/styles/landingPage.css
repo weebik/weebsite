@@ -20,8 +20,8 @@
 }
 
 .avatar {
-  width: 20rem;
-  height: 20rem;
+  width: 30vh;
+  height: 30vh;
   border-radius: 100%;
   object-fit: cover;
   filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));

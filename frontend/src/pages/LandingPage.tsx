@@ -74,12 +74,7 @@ function LandingPage() {
                 animation: "gradient-animation 5s ease infinite",
               }}
             >
-              <Typography
-                sx={{
-                  fontWeight: "bolder",
-                }}
-                variant="h1"
-              >
+              <Typography fontSize="5rem" fontWeight="bolder" variant="h1">
                 {translations[language].title}
               </Typography>
             </motion.div>
@@ -92,7 +87,7 @@ function LandingPage() {
               exit="exit"
               variants={textAnimation}
             >
-              <Typography sx={{ fontWeight: "normal" }} variant="h4">
+              <Typography fontSize="2rem" fontWeight="normal" variant="h4">
                 {translations[language].text.split("").map((char, index) => (
                   <motion.span
                     key={index}
