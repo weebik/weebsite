@@ -20,16 +20,14 @@
 }
 
 .avatar {
-  width: 400px;
-  height: 400px;
+  width: 20rem;
+  height: 20rem;
   border-radius: 100%;
   object-fit: cover;
   filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));
-  &:hover {
-    scale: 1.02;
-  }
   transition: all ease-in-out 0.3s;
   padding-bottom: 2vh;
+  animation: drop-shadow-animation 3s infinite linear;
 }
 
 .landing-title {
@@ -52,5 +50,17 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes drop-shadow-animation {
+  0% {
+    filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 60px rgba(158, 109, 200, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));
   }
 }

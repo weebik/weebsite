@@ -15,6 +15,13 @@ function LandingPage() {
       text: "This website is my personal CV",
     },
   };
+
+  const textAnimation = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
+    exit: { opacity: 0, y: 10, transition: { duration: 0.3 } },
+  };
+
   return (
     <>
       <video
@@ -28,8 +35,9 @@ function LandingPage() {
         <source src="/assets/background.mp4" type="video/mp4" />
       </video>
       <div className="landing-container">
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.div
+            key={`avatar-${language}`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -51,12 +59,13 @@ function LandingPage() {
           </motion.div>
         </AnimatePresence>
         <div className="landing-content">
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              key={`title-${language}`}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={textAnimation}
               style={{
                 background: "linear-gradient(45deg, #85A3AB, #9E6DC8)",
                 backgroundSize: "400% 400%",
@@ -75,12 +84,13 @@ function LandingPage() {
               </Typography>
             </motion.div>
           </AnimatePresence>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 1, delay: 1 }}
+              key={`text-${language}`}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={textAnimation}
             >
               <Typography sx={{ fontWeight: "normal" }} variant="h4">
                 {translations[language].text.split("").map((char, index) => (
@@ -88,7 +98,8 @@ function LandingPage() {
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1, duration: 0.1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.1 }}
                   >
                     {char}
                   </motion.span>
