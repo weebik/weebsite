@@ -1,14 +1,6 @@
-import { createContext, useState, ReactNode } from "react";
+import { useState, ReactNode } from "react";
 import { language } from "../types/language.type.ts";
-
-interface LanguageContextProps {
-  language: language;
-  toggleLanguage: () => void;
-}
-
-export const LanguageContext = createContext<LanguageContextProps | undefined>(
-  undefined
-);
+import { LanguageContext } from "./LanguageContext.tsx";
 
 interface LanguageProviderProps {
   children: ReactNode;

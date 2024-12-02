@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import SendIcon from "@mui/icons-material/Send";
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import "../styles/contactForm.css";
 
 function ContactForm() {
@@ -183,7 +183,7 @@ function ContactForm() {
                 sx={{ cursor: "pointer", "&:hover": { color: "#e4405f" } }}
               />
             </Box>
-            <SendIcon
+            <SendRoundedIcon
               fontSize="large"
               sx={{ cursor: "pointer", "&:hover": { color: "#e4405f" } }}
             />

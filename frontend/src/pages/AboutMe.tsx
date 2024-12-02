@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useLanguage } from "../hooks/useLanguage";
 import background from "../assets/background.mp4";
 import Footer from "../components/Footer";
+import Carousel from 'react-material-ui-carousel'
 import EduTimeline from "../components/EduTimeline";
 import avatar from "../assets/avatar.png";
 import "../styles/aboutme.css";
@@ -48,7 +49,6 @@ function AboutMe() {
                 <img className="photos1" src={avatar} alt="Krystian" />
               </div>
             </div>
-            <div className="text-title">Hi Im Krystian</div>
           </div>
           <div className="text-container">
             <div className="text-title">About Me</div>
@@ -75,6 +75,27 @@ function AboutMe() {
             </div>
           </div>
           <EduTimeline />
+          <div className="text-container">
+            <div className="text-content">
+              <Carousel>
+                <span>a</span>
+                <span>b</span>
+                <span>c</span>
+              </Carousel>
+            </div>
+          </div>
+          <div className="text-container">
+            <div className="text-title">Hobbies</div>
+            <div className="text-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
+              faucibus dui. Orci varius natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Suspendisse potenti.
+              Integer fermentum luctus velit, nec varius dolor sollicitudin at.
+              Orci varius natoque penatibus et magnis dis parturient montes,
+              nascetur ridiculus mus. Aenean eget velit neque. Aenean varius ut
+              urna eu scelerisque.
+            </div>
+          </div>
         </div>
         <div className="contact-footer">
           <Footer />
