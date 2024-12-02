@@ -1,8 +1,9 @@
 import { Typography } from "@mui/material";
-import "../styles/contact.css";
 import { useLanguage } from "../hooks/useLanguage";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import background from "../assets/background.mp4";
+import "../styles/contact.css";
 
 function Contact() {
   const { language } = useLanguage();
@@ -24,7 +25,7 @@ function Contact() {
         loop
         muted
         preload="metadata"
-        src="/assets/background.mp4"
+        src={background}
         onContextMenu={(e) => e.preventDefault()}
       />
       <div className="contact-container">

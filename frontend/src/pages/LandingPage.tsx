@@ -1,8 +1,9 @@
 import { Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
-import "../styles/landingPage.css";
 import Footer from "../components/Footer";
+import background from "../assets/background.mp4";
+import "../styles/landingPage.css";
 
 function LandingPage() {
   const { language } = useLanguage();
@@ -27,14 +28,14 @@ function LandingPage() {
     <>
       <video
         className="background-video"
+        src={background}
+        typeof="video/mp4"
         autoPlay
         loop
         muted
         preload="metadata"
         onContextMenu={(e) => e.preventDefault()}
-      >
-        <source src="/assets/background.mp4" type="video/mp4" />
-      </video>
+      />
       <div className="landing-container">
         <AnimatePresence mode="wait">
           <motion.div
@@ -53,7 +54,7 @@ function LandingPage() {
           >
             <img
               className="avatar"
-              src="/assets/avatar.png"
+              src="/avatar.png"
               alt="avatar"
               onContextMenu={(e) => e.preventDefault()}
             />

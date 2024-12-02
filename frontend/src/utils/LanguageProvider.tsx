@@ -1,9 +1,8 @@
 import { createContext, useState, ReactNode } from "react";
-
-type Language = "pl" | "en";
+import { language } from "../types/language.type.ts";
 
 interface LanguageContextProps {
-  language: Language;
+  language: language;
   toggleLanguage: () => void;
 }
 
@@ -16,7 +15,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<language>("en");
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "pl" : "en"));

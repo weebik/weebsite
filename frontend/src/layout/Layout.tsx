@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography, Fab } from "@mui/material";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ReactNode } from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import english from "../assets/english.svg";
@@ -38,7 +38,13 @@ function Layout({ children }: { children: ReactNode }) {
         position="static"
       >
         <Toolbar className="navBar">
-          <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
+          <NavLink
+            to="/home"
+            style={({ isActive }) => ({
+              textDecoration: "none",
+              color: isActive ? "purple" : "white",
+            })}
+          >
             <Typography
               sx={{
                 fontSize: { xs: "3vw", sm: "2vw", md: "1.5vw" },
@@ -48,10 +54,13 @@ function Layout({ children }: { children: ReactNode }) {
             >
               {translations[language].home}
             </Typography>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/about-me"
-            style={{ textDecoration: "none", color: "white" }}
+            style={({ isActive }) => ({
+              textDecoration: "none",
+              color: isActive ? "purple" : "white",
+            })}
           >
             <Typography
               sx={{
@@ -62,10 +71,13 @@ function Layout({ children }: { children: ReactNode }) {
             >
               {translations[language].aboutMe}
             </Typography>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/portfolio"
-            style={{ textDecoration: "none", color: "white" }}
+            style={({ isActive }) => ({
+              textDecoration: "none",
+              color: isActive ? "purple" : "white",
+            })}
           >
             <Typography
               sx={{
@@ -76,10 +88,13 @@ function Layout({ children }: { children: ReactNode }) {
             >
               {translations[language].portfolio}
             </Typography>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contact"
-            style={{ textDecoration: "none", color: "white" }}
+            style={({ isActive }) => ({
+              textDecoration: "none",
+              color: isActive ? "purple" : "white",
+            })}
           >
             <Typography
               sx={{
@@ -90,7 +105,7 @@ function Layout({ children }: { children: ReactNode }) {
             >
               {translations[language].contact}
             </Typography>
-          </Link>
+          </NavLink>
         </Toolbar>
         <Fab
           className="language-button"
