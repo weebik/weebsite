@@ -1,23 +1,53 @@
 import { Typography } from "@mui/material";
 import { useLanguage } from "../hooks/useLanguage";
-import background from "../assets/background.mp4";
+import { useError } from "../hooks/useError";
+import { useEffect, useState } from "react";
+import ImageCarousel from "../components/ImageCarousel";
+import BorderedImage from "../components/BorderedImage";
+import TimelineComponent, {
+  TimelineData,
+} from "../components/TimelineComponent";
 import Footer from "../components/Footer";
-import Carousel from 'react-material-ui-carousel'
-import EduTimeline from "../components/EduTimeline";
-import avatar from "../assets/avatar.png";
+import LoadingSpinner from "../components/LoadingSpinner";
+import { getApiUrl } from "../utils/apiConfig";
+import background from "../assets/background.mp4";
 import "../styles/aboutme.css";
 
 function AboutMe() {
-  const { language } = useLanguage();
+  interface AboutMeData {
+    title: string;
+    introductionTitle: string;
+    introductionText: string;
+    educationTitle: string;
+    educationText: string;
+    hobbiesTitle: string;
+    hobbiesText: string;
+    educationTimeline: TimelineData[];
+  }
 
-  const translations = {
-    en: {
-      title: "ABOUT ME",
-    },
-    pl: {
-      title: "O MNIE",
-    },
-  };
+  const { language } = useLanguage();
+  const { setError } = useError();
+  const [aboutMeData, setAboutMeData] = useState<AboutMeData | null>(null);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const response = await fetch(
+          getApiUrl(`/api/about-mes?locale=${language}`)
+        );
+        const data = await response.json();
+        setAboutMeData(data.data[0]);
+      } catch (error) {
+        setError("Unable to load data. Please try again later.");
+        console.error("Error fetching about-me data: ", error);
+      }
+    };
+    fetchAboutData();
+  }, [language, setError]);
+
+  if (!aboutMeData) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="about-page">
@@ -29,102 +59,47 @@ function AboutMe() {
         preload="metadata"
         src={background}
         onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
       />
-      <div className="background-cropper" />
       <div className="about-container">
         <div className="about-title-background">
           <Typography
             variant="h2"
             fontWeight="bold"
             color="white"
-            sx={{ fontSize: { xs: "7vw", sm: "6vw", md: "3.5vw" } }}
+            sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
           >
-            {translations[language].title}
+            {aboutMeData.title}
           </Typography>
         </div>
         <div className="about-content">
-          <div className="text-container">
-            <div className="photo-clipper">
-              <div className="photos1-container">
-                <img className="photos1" src={avatar} alt="Krystian" />
-              </div>
-            </div>
+          <div className="photo-container">
+            <BorderedImage
+              src={`http://localhost:1337/uploads/myphoto_0cadaccce4.png`}
+              alt="avatar"
+            />
           </div>
-          <div className="text-container">
-            <div className="text-title">About Me</div>
-            <div className="text-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-              faucibus dui. Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. Suspendisse potenti.
-              Integer fermentum luctus velit, nec varius dolor sollicitudin at.
-              Orci varius natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Aenean eget velit neque. Aenean varius ut
-              urna eu scelerisque.
-            </div>
+          <div className="container">
+            <div className="text-title">{aboutMeData.introductionTitle}</div>
+            <div className="text-content">{aboutMeData.introductionText}</div>
           </div>
-          <div className="text-container">
-            <div className="text-title">Education</div>
-            <div className="text-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-              faucibus dui. Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. Suspendisse potenti.
-              Integer fermentum luctus velit, nec varius dolor sollicitudin at.
-              Orci varius natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Aenean eget velit neque. Aenean varius ut
-              urna eu scelerisque.
-            </div>
+          <div className="container">
+            <div className="text-title">{aboutMeData.educationTitle}</div>
+            <div className="text-content">{aboutMeData.educationText}</div>
           </div>
-          <EduTimeline />
-          <div className="text-container">
-            <div className="text-content">
-              <Carousel>
-                <span>a</span>
-                <span>b</span>
-                <span>c</span>
-              </Carousel>
-            </div>
+          <TimelineComponent timelineData={aboutMeData.educationTimeline} />
+          <div className="container">
+            <ImageCarousel />
           </div>
-          <div className="text-container">
-            <div className="text-title">Hobbies</div>
-            <div className="text-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-              faucibus dui. Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. Suspendisse potenti.
-              Integer fermentum luctus velit, nec varius dolor sollicitudin at.
-              Orci varius natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Aenean eget velit neque. Aenean varius ut
-              urna eu scelerisque.
-            </div>
+          <div className="container">
+            <div className="text-title">{aboutMeData.hobbiesTitle}</div>
+            <div className="text-content">{aboutMeData.hobbiesText}</div>
           </div>
         </div>
         <div className="contact-footer">
           <Footer />
         </div>
       </div>
-      <svg
-        style={{ visibility: "hidden", position: "absolute" }}
-        width="0"
-        height="0"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-      >
-        <defs>
-          <filter id="round">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-              result="goo"
-            />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
     </div>
   );
 }

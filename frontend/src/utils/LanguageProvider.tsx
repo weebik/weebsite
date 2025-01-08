@@ -1,6 +1,6 @@
 import { useState, ReactNode } from "react";
 import { language } from "../types/language.type.ts";
-import { LanguageContext } from "./LanguageContext.tsx";
+import { LanguageContext } from "./LanguageContext.ts";
 
 interface LanguageProviderProps {
   children: ReactNode;

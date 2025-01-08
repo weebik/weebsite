@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
 import Footer from "../components/Footer";
 import background from "../assets/background.mp4";
+import avatar from "../assets/avatar.png";
 import "../styles/landingPage.css";
 
 function LandingPage() {
@@ -35,6 +36,7 @@ function LandingPage() {
         muted
         preload="metadata"
         onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
       />
       <div className="landing-container">
         <AnimatePresence mode="wait">
@@ -54,9 +56,10 @@ function LandingPage() {
           >
             <img
               className="avatar"
-              src="/avatar.png"
+              src={avatar}
               alt="avatar"
               onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
             />
           </motion.div>
         </AnimatePresence>

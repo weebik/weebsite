@@ -76,6 +76,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 [![React][React.js]][React-url]
+[![Typescript][Typescript]][Typescript-url]
+![CSS][CSS3]
 [![Strapi][Strapi]][Strapi-url]
 [![MUI][MUI]][MUI-url]
 
@@ -131,6 +133,9 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
 [React-url]: https://reactjs.org/
+[Typescript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org
+[CSS3]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
 [Strapi]: https://img.shields.io/badge/strapi-%232E7EEA.svg?style=for-the-badge&logo=strapi&logoColor=white
 [Strapi-url]: https://strapi.io
 [MUI]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white

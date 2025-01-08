@@ -1,82 +1,97 @@
+import { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
+import TimelineComponent, {
+  TimelineData,
+} from "../components/TimelineComponent";
 import Footer from "../components/Footer";
+import LoadingSpinner from "../components/LoadingSpinner";
 import { useLanguage } from "../hooks/useLanguage";
+import { getApiUrl } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
 import "../styles/portfolio.css";
-import Skill from "../components/Skill";
+import SkillsList from "../components/SkillsList";
+import { SkillData } from "../types/skill.type";
+import RepoList from "../components/RepoList";
 
 function Portfolio() {
+  interface PortfolioData {
+    title: string;
+    jobsTitle: string;
+    jobsText: string;
+    jobsTimeline: TimelineData[];
+    skillsTitle: string;
+    skills: SkillData[];
+  }
+
   const { language } = useLanguage();
-  const translations = {
-    en: {
-      title: "PORTFOLIO",
-    },
-    pl: {
-      title: "PORTFOLIO",
-    },
-  };
+
+  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(
+    null
+  );
+
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      try {
+        const response = await fetch(
+          getApiUrl(`/api/portfolios?locale=${language}`)
+        );
+        const data = await response.json();
+        setPortfolioData(data.data[0]);
+      } catch (error) {
+        console.error("Error fetching about-me data: ", error);
+      }
+    };
+    fetchPortfolioData();
+  }, [language]);
+
+  if (!portfolioData) {
+    return <LoadingSpinner />;
+  }
 
   return (
-    <div className="about-page">
+    <div className="portfolio-page">
       <video
-        className="about-background"
+        className="portfolio-background"
         autoPlay
         loop
         muted
         preload="metadata"
         src={background}
         onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
       />
-      <div className="about-container">
-        <div className="about-title-background">
+      <div className="portfolio-container">
+        <div className="portfolio-title-background">
           <Typography
             variant="h2"
             fontWeight="bold"
             color="white"
-            sx={{ fontSize: { xs: "7vw", sm: "6vw", md: "3.5vw" } }}
+            sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
           >
-            {translations[language].title}
+            {portfolioData.title}
           </Typography>
         </div>
-        <div className="about-content">
-          <div className="about-title"></div>
-          <div className="skills-clipper">
-            <div className="skills-container">
-              <div className="text-title">Skills</div>
-              <div className="text-content">
-                <Skill name="React" level={5} imgSrc="/path/to/react-logo.png" />
-              </div>
-            </div>
+        <div className="portfolio-content">
+          <div className="container">
+            <div className="text-title">{portfolioData.jobsTitle}</div>
+            <div className="text-content">{portfolioData.jobsText}</div>
+          </div>
+          <div className="container">
+            <TimelineComponent timelineData={portfolioData.jobsTimeline} />
+          </div>
+          <div className="wide-container">
+            <div className="text-title">{portfolioData.skillsTitle}</div>
+            <SkillsList skillData={portfolioData.skills} />
+          </div>
+          <div className="wide-container">
+            <div className="text-title">My Projects</div>
+            <RepoList />
           </div>
         </div>
-        <div className="contact-footer">
+        <div className="portfolio-footer">
           <Footer />
         </div>
       </div>
-      <svg
-        style={{ visibility: "hidden", position: "absolute" }}
-        width="0"
-        height="0"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-      >
-        <defs>
-          <filter id="round">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-              result="goo"
-            />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
     </div>
   );
 }

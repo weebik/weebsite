@@ -1,0 +1,53 @@
+.skill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 100px;
+  &:nth-child(8n) {
+    background-color: rgba(33, 32, 71, 1);
+  }
+  &:nth-child(8n + 1) {
+    background-color: rgba(62, 55, 126, 1);
+  }
+  &:nth-child(8n + 2) {
+    background-color: rgba(158, 109, 200, 1);
+  }
+  &:nth-child(8n + 3) {
+    background-color: rgba(212, 184, 241, 1);
+  }
+  &:nth-child(8n + 4) {
+    background-color: rgba(133, 163, 171, 1);
+  }
+  &:nth-child(8n + 5) {
+    background-color: rgba(75, 109, 133, 1);
+  }
+  &:nth-child(8n + 6) {
+    background-color: rgba(32, 32, 71, 1);
+  }
+  &:nth-child(8n + 7) {
+    background-color: rgba(22, 34, 55, 1);
+  }
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.08));
+  &:hover {
+    scale: 1.05;
+  }
+  transition: scale 0.2s;
+}
+
+.skill-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1vw;
+  height: 100%;
+}

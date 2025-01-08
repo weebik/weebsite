@@ -1,0 +1,5 @@
+.image {
+  clip-path: url(#squircleClip);
+  width: 100%;
+  object-fit: cover;
+}
