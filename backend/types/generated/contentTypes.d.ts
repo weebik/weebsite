@@ -678,6 +678,12 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::portfolio.portfolio'
     >;
+    projectsTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     skills: Schema.Attribute.JSON &
       Schema.Attribute.SetPluginOptions<{

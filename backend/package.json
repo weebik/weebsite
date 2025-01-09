@@ -14,11 +14,14 @@
     "@strapi/plugin-cloud": "5.4.1",
     "@strapi/plugin-users-permissions": "5.4.1",
     "@strapi/provider-email-nodemailer": "^5.6.0",
-    "@strapi/strapi": "^5.6.0",
+    "@strapi/strapi": "^5.7.0",
     "better-sqlite3": "11.3.0",
+    "pg": "^8.13.1",
+    "postgres": "^3.4.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-provider-upload-supabase": "^1.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
