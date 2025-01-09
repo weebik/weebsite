@@ -5,6 +5,7 @@
   margin-top: 5vh;
   margin-left: 5vw;
   margin-right: 5vw;
+  text-align: center;
 }
 
 .footer {
@@ -22,8 +23,4 @@
 .footer-content {
   color: #fff;
   width: 100%;
-}
-
-.footer-divider {
-  text-align: center;
 }
