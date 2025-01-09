@@ -4,20 +4,20 @@ import { ReactNode } from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import english from "../assets/english.svg";
 import polish from "../assets/polish.svg";
-import "../styles/navBar.css";
 import routes from "../routes/routes";
 import { AnimatePresence, motion, Spring } from "framer-motion";
+import "../styles/navBar.css";
 
 function Layout({ children }: { children: ReactNode }) {
   const { language, toggleLanguage } = useLanguage();
   const location = useLocation();
 
-  // const transitionSpringPhysics: Spring = {
-  //   type: "spring",
-  //   mass: 0.2,
-  //   stiffness: 80,
-  //   damping: 10,
-  // };
+  const transitionSpringPhysics: Spring = {
+    type: "spring",
+    mass: 0.2,
+    stiffness: 80,
+    damping: 10,
+  };
 
   const translations: { [key: string]: { [key: string]: string } } = {
     pl: {
@@ -55,8 +55,14 @@ function Layout({ children }: { children: ReactNode }) {
                   key={path}
                   to={path}
                   style={({ isActive }) => ({
+                    color: isActive ? "rgba(212, 184, 241, 1)" : "white",
                     textDecoration: "none",
-                    color: isActive ? "purple" : "white",
+                    padding: "0 20px",
+                    borderRadius: "40px",
+                    backgroundColor: isActive
+                      ? "rgba(62, 55, 126, 1)"
+                      : "transparent",
+                    transition: "all 200ms ease-in-out",
                   })}
                 >
                   <Typography
@@ -84,7 +90,7 @@ function Layout({ children }: { children: ReactNode }) {
           />
         </Fab>
       </AppBar>
-      {/* <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div key={location.pathname}>
           <motion.div
             style={{
@@ -129,10 +135,10 @@ function Layout({ children }: { children: ReactNode }) {
             transition={transitionSpringPhysics}
             initial={{ height: "100vh" }}
             animate={{ height: "0vh", transition: { delay: 0.2 } }}
-          /> */}
-      {children}
-      {/* </motion.div>
-      </AnimatePresence> */}
+          />
+          {children}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { getApiUrl } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
-import "../styles/aboutme.css";
+import "../styles/aboutMe.css";
 
 function AboutMe() {
   interface AboutMeData {

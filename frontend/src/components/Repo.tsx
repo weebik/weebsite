@@ -1,3 +1,5 @@
+import "../styles/repoList.css";
+
 interface RepoProps {
   name: string;
   htmlUrl: string;

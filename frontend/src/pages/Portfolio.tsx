@@ -21,6 +21,7 @@ function Portfolio() {
     jobsTimeline: TimelineData[];
     skillsTitle: string;
     skills: SkillData[];
+    projectsTitle: string;
   }
 
   const { language } = useLanguage();
@@ -84,7 +85,7 @@ function Portfolio() {
             <SkillsList skillData={portfolioData.skills} />
           </div>
           <div className="wide-container">
-            <div className="text-title">My Projects</div>
+            <div className="text-title">{portfolioData.projectsTitle}</div>
             <RepoList />
           </div>
         </div>

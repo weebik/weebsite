@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useError } from "../hooks/useError";
 import Repo from "./Repo";
+import "../styles/repoList.css";
 
 interface RepoData {
   id: number;

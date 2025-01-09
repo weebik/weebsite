@@ -9,7 +9,7 @@ interface SkillDataProps {
 function SkillsList({ skillData }: SkillDataProps) {
   return (
     <div className="skill-list">
-      {skillData.map((_skill, index) => (
+      {skillData.map((_, index) => (
         <Skill
           key={index}
           name={skillData[index].name}

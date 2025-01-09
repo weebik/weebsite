@@ -1,0 +1,34 @@
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.repo-list a {
+  display: block;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0.9;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.repo-list a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  &:hover {
+    scale: 1.05;
+  }
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .repo-list a {
+    width: 100%;
+  }
+}
