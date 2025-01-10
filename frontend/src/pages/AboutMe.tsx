@@ -88,7 +88,7 @@ function AboutMe() {
             <div className="text-content">{aboutMeData.hobbiesText}</div>
           </div>
         </div>
-        <div className="contact-footer">
+        <div className="about-footer">
           <Footer />
         </div>
       </div>
