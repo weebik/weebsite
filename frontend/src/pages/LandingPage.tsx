@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
 import Footer from "../components/Footer";
@@ -79,9 +78,9 @@ function LandingPage() {
                 animation: "gradient-animation 5s ease infinite",
               }}
             >
-              <Typography fontSize="5rem" fontWeight="bolder" variant="h1">
+              <div className="landing-title">
                 {translations[language].title}
-              </Typography>
+              </div>
             </motion.div>
           </AnimatePresence>
           <AnimatePresence mode="wait">
@@ -92,7 +91,7 @@ function LandingPage() {
               exit="exit"
               variants={textAnimation}
             >
-              <Typography fontSize="2rem" fontWeight="normal" variant="h4">
+              <div className="landing-text">
                 {translations[language].text.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -104,7 +103,7 @@ function LandingPage() {
                     {char}
                   </motion.span>
                 ))}
-              </Typography>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

@@ -5,10 +5,10 @@ function LoadingSpinner() {
     <div
       style={{
         position: "fixed",
-        top: "50%",
-        left: "50%",
-        width: 50,
-        height: 50,
+        top: "calc(50vh - 25px)",
+        left: "calc(50vw - 25px)",
+        width: "50px",
+        height: "50px",
       }}
     >
       <motion.span

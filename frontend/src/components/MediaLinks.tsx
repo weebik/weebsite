@@ -6,7 +6,6 @@ import "../styles/mediaLinks.css";
 
 function MediaLinks() {
   return (
-    // <Box display="flex" alignItems="center" gap={2}>
     <div className="media-links">
       <FacebookIcon
         fontSize="large"

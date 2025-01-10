@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import "../styles/footer.css";
 import MediaLinks from "./MediaLinks";
 
@@ -7,9 +6,9 @@ function Footer() {
     <div className="footer">
       <div className="footer-content">
         <div className="footer-divider">
-          <Typography variant="overline">
+          <div className="footer-text">
             © 2024 Krystian Ćwikliński. All rights reserved.
-          </Typography>
+          </div>
           <MediaLinks />
         </div>
       </div>

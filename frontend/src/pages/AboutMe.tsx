@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { useLanguage } from "../hooks/useLanguage";
 import { useError } from "../hooks/useError";
 import { useEffect, useState } from "react";
@@ -63,14 +62,7 @@ function AboutMe() {
       />
       <div className="about-container">
         <div className="about-title-background">
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            color="white"
-            sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
-          >
-            {aboutMeData.title}
-          </Typography>
+          <div className="about-title">{aboutMeData.title}</div>
         </div>
         <div className="about-content">
           <div className="photo-container">

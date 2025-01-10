@@ -1,11 +1,11 @@
 .landing-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
-  padding-top: 10vh;
-  height: calc(90vh - 220px);
+  height: calc(90vh - 117px);
 }
 
 .background-video {
@@ -26,19 +26,16 @@
   object-fit: cover;
   filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));
   transition: all ease-in-out 0.3s;
-  padding-bottom: 2vh;
   animation: drop-shadow-animation 3s infinite linear;
 }
 
 .landing-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
-.landing-content {
-  font-size: 1.2rem;
-  max-width: 600px;
-  line-height: 1.6;
+.landing-text {
+  font-size: 2.5rem;
 }
 
 @keyframes gradient-animation {
@@ -62,5 +59,27 @@
   }
   100% {
     filter: drop-shadow(0 0 40px rgba(133, 163, 171, 1));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-container {
+    height: calc(100vh - 120px);
+    margin: 0 2rem;
+  }
+  .landing-title {
+    margin-top: 10px;
+    font-size: 4rem;
+  }
+  .landing-text {
+    font-size: 2rem;
+  }
+  .landing-content {
+    line-height: 1.2;
+  }
+  .avatar {
+    margin-top: 5vh;
+    width: 25vh;
+    height: 25vh;
   }
 }

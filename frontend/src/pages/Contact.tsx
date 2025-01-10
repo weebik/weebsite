@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -51,30 +50,19 @@ function Contact() {
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
       />
-      <div className="contact-container">
-        <div className="contact-content">
-          <div className="contact-title">
-            <Typography
-              variant="h2"
-              fontWeight="bold"
-              color="white"
-              marginBottom="5vh"
-              sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
-            >
-              {contactData.title}
-            </Typography>
-          </div>
-          <div className="contact-form">
-            <ContactForm
-              text={contactData.contactText}
-              nameLabel={contactData.nameLabel}
-              messageLabel={contactData.messageLabel}
-            />
-          </div>
+
+      <div className="contact-content">
+        <div className="contact-title">{contactData.title}</div>
+        <div className="contact-form-container">
+          <ContactForm
+            text={contactData.contactText}
+            nameLabel={contactData.nameLabel}
+            messageLabel={contactData.messageLabel}
+          />
         </div>
-        <div className="contact-footer">
-          <Footer />
-        </div>
+      </div>
+      <div className="contact-footer">
+        <Footer />
       </div>
     </div>
   );

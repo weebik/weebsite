@@ -20,7 +20,23 @@
   z-index: 1000;
 }
 
+.footer-text {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
 .footer-content {
   color: #fff;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-divider {
+    margin-top: 3vh;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .footer-text {
+    font-size: 0.6rem;
+  }
 }

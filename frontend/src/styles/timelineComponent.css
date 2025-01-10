@@ -1,0 +1,26 @@
+.timeline-title {
+  color: white;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.1vh;
+}
+
+.timeline-description {
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-title {
+    font-size: 0.9rem;
+  }
+  .timeline-description {
+    font-size: 0.7rem;
+  }
+}

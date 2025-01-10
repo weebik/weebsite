@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
 import TimelineComponent, {
   TimelineData,
 } from "../components/TimelineComponent";
@@ -63,14 +62,7 @@ function Portfolio() {
       />
       <div className="portfolio-container">
         <div className="portfolio-title-background">
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            color="white"
-            sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
-          >
-            {portfolioData.title}
-          </Typography>
+          <div className="portfolio-title">{portfolioData.title}</div>
         </div>
         <div className="portfolio-content">
           <div className="container">

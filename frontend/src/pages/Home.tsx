@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Typography, Link } from "@mui/material";
+import { Link } from "@mui/material";
 import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -7,6 +7,7 @@ import { useLanguage } from "../hooks/useLanguage";
 import { getApiUrl } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
 import "../styles/home.css";
+import TechList from "../components/TechList";
 
 function Home() {
   interface HomeData {
@@ -93,14 +94,7 @@ function Home() {
       />
       <div className="home-container">
         <div className="home-title-background">
-          <Typography
-            variant="h2"
-            fontWeight="bold"
-            color="white"
-            sx={{ fontSize: { xs: "5vw", sm: "5vw", md: "3.5vw" } }}
-          >
-            {homeData.title}
-          </Typography>
+          <div className="home-title">{homeData.title}</div>
         </div>
         <div className="home-content">
           <div className="intr-container">
@@ -117,43 +111,12 @@ function Home() {
               <div className="cv-download-text">{homeData.downloadButton}</div>
             </div>
           </div>
-          <div className="container">
+          <div className="tech-container">
             <div className="text-title">{homeData.technologiesTitle}</div>
             <div className="text-content">{homeData.technologiesText}</div>
           </div>
-          <div className="container">
-            <ul className="tech-list">
-              <li>
-                <img
-                  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"
-                  alt="React.js"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"
-                  alt="typescript"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white"
-                  alt="Material-UI"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
-                  alt="CSS3"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://img.shields.io/badge/strapi-%232E7EEA.svg?style=for-the-badge&logo=strapi&logoColor=white"
-                  alt="Strapi"
-                />
-              </li>
-            </ul>
+          <div className="tech-container">
+            <TechList />
           </div>
           <div className="more-container">
             <div className="text-title">{homeData.findmoreTitle}</div>

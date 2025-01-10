@@ -16,9 +16,8 @@
 .about-content {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 70px 50px;
+  margin: 0 25rem;
   padding-bottom: 160px;
 }
 
@@ -35,6 +34,11 @@
   background-position: center;
   filter: drop-shadow(0 0 20px rgba(212, 184, 241, 0.15));
 }
+.about-title {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+}
 
 .about-footer {
   position: relative;
@@ -42,12 +46,13 @@
   margin-top: -120px;
 }
 
-.container {
+.about-content .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .photo-container {
@@ -61,7 +66,7 @@
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1vh;
 }
 
 .about-content .text-content {
@@ -71,32 +76,41 @@
   text-align: justify;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+  .about-background {
+    width: 100%;
+    position: relative;
+    filter: opacity(30%);
+    z-index: -1;
+    margin-top: -25%;
+    object-position: 0 5vw;
+  }
+
+  .about-title-background {
+    background-size: 180% 90%;
+    padding: 10vw 0;
+    margin-top: -10%;
+  }
+
   .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .education-title {
-    font-size: 1.5rem;
+    margin: 0 10vw;
+    grid-template-columns: 1fr;
+    gap: 5vh;
+    padding-bottom: 100px;
   }
 
-  .education-text {
-    font-size: 0.9rem;
+  .about-title {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
   }
-}
 
-@media (max-width: 480px) {
-  .education-title {
+  .about-content .text-title {
+    font-size: 2rem;
+    margin: 1vh 0;
+  }
+
+  .about-content .text-content {
     font-size: 1.2rem;
-  }
-
-  .education-text {
-    font-size: 0.8rem;
-    line-height: 1.4;
   }
 }

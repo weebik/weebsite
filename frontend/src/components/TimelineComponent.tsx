@@ -6,7 +6,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-import Typography from "@mui/material/Typography";
+import "../styles/timelineComponent.css";
 
 interface TimelineComponentProps {
   timelineData: TimelineData[];
@@ -40,11 +40,9 @@ function TimelineComponent({ timelineData }: TimelineComponentProps) {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: "12px", px: 2 }}>
-            <Typography variant="h6" component="span">
-              {data.title}
-            </Typography>
-            <Typography>{data.description}</Typography>
+          <TimelineContent sx={{ py: "5px", px: 2 }}>
+            <div className="timeline-title">{data.title}</div>
+            <div className="timeline-description">{data.description}</div>
           </TimelineContent>
         </TimelineItem>
       ))}

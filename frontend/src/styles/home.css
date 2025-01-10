@@ -26,6 +26,12 @@
   background-position: center;
 }
 
+.home-title {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+}
+
 .home-footer {
   position: relative;
   z-index: 10;
@@ -35,11 +41,9 @@
 .home-content {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 70px 50px;
+  margin: 0 25rem;
   padding-bottom: 200px;
-  gap: 60px;
 }
 
 .intr-container {
@@ -96,16 +100,17 @@
   color: white;
   font-size: 1.5rem;
   line-height: 1.5;
-  text-align: justify;
+  text-align: auto;
 }
 
 .tech-list {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 .tech-list li {
@@ -137,32 +142,71 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+  .home-background {
+    width: 100%;
+    position: relative;
+    filter: opacity(30%);
+    z-index: -1;
+    margin-top: -25%;
+    object-position: 0 5vw;
+  }
+
+  .home-title-background {
+    background-size: 180% 100%;
+    padding: 10vw 0;
+    margin-top: -10%;
+  }
+
   .home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 0 10vw;
+    grid-template-columns: 1fr;
+    gap: 5vh;
   }
-}
 
-@media (max-width: 768px) {
   .home-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
   }
 
-  .home-text {
-    font-size: 0.9rem;
+  .home-content .text-title {
+    font-size: 2rem;
+    margin: 1vh 0;
   }
-}
-
-@media (max-width: 480px) {
-  .home-title {
+  .home-content .text-content {
     font-size: 1.2rem;
   }
 
-  .home-text {
-    font-size: 0.8rem;
-    line-height: 1.4;
+  .home-content .cv-download {
+    width: 50%;
+    font-size: 1.2rem;
+    margin-top: 1vh;
+    padding: 10px;
+  }
+
+  .tech-list {
+    gap: 1vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tech-list img {
+    height: 45px;
+    border-radius: 115px;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.1));
+  }
+
+  .more-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more-container ul {
+    text-align: center;
+    gap: 1vh;
   }
 }
