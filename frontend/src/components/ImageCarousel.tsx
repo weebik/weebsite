@@ -5,22 +5,16 @@ import BorderedImage from "./BorderedImage";
 function ImageCarousel() {
   const carouselItems = [
     {
-      src: "http://localhost:1337/uploads/travel1_9ff4c53558.png",
+      src: "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/travel1.png-efbbca0d259d597a11f84d3dbdea49e0.png",
     },
     {
-      src: "http://localhost:1337/uploads/snow1_661507591c.png",
+      src: "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/climb.png-5a768ece656e1fc26e3e0eac9f3d140b.png",
     },
     {
-      src: "http://localhost:1337/uploads/climb_0827140de2.png",
+      src: "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/snowboard.png-236b3db79d0ea2360ea0c3f3a0034c4e.png",
     },
     {
-      src: "http://localhost:1337/uploads/travel2_d37a235799.png",
-    },
-    {
-      src: "http://localhost:1337/uploads/snow2_140b4fd2eb.png",
-    },
-    {
-      src: "http://localhost:1337/uploads/cat_5342361d6d.png",
+      src: "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/travel2.png-46cb35deb94c2a77ed1a6305f29b0a3a.png",
     },
   ];
 
@@ -28,11 +22,13 @@ function ImageCarousel() {
     <div className="carousel-container">
       <div className="photo-clipper">
         <Carousel
+          autoPlay={true}
+          changeOnFirstRender={false}
           className="carousel-clipper"
           sx={{ width: "100%", padding: "0", margin: "0" }}
         >
           {carouselItems.map((item, index) => (
-            <BorderedImage key={index} src={item.src} alt="carousel" />
+            <BorderedImage key={index} src={item.src} alt="carousel-item" />
           ))}
         </Carousel>
       </div>

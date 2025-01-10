@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 70px 50px;
-  margin: 0 25rem;
+  margin: 0 15vw;
   padding-bottom: 200px;
 }
 

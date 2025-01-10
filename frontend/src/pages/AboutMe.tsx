@@ -67,7 +67,9 @@ function AboutMe() {
         <div className="about-content">
           <div className="photo-container">
             <BorderedImage
-              src={`http://localhost:1337/uploads/myphoto_0cadaccce4.png`}
+              src={
+                "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/me.png-87b4c994b3f49dc5d748aa101f8ab891.png"
+              }
               alt="avatar"
             />
           </div>

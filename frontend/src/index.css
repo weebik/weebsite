@@ -10,8 +10,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 #root {
-  --bg: rgba(22, 34, 55);
+  --bg: rgba(22, 34, 55, 1);
   --clr1:
   --clr2:
   --clr3:

@@ -2,38 +2,35 @@
 
 
 <!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+<div align="center">
+
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+</div>
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/weebik/weebsite">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/screen.png" alt="Logo" width="700" height="360">
   </a>
 
-<h3 align="center">weebik</h3>
-
+<h3 align="center">weebsite</h3>
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/weebik/weebsite"><strong>Explore the docs »</strong></a>
+    This is my personal fullstack project that serves as my web CV.
     <br />
     <br />
-    <a href="https://github.com/weebik/weebsite">View Demo</a>
+    <a href="https://weebsitecv.vercel.app">Visit</a>
     ·
     <a href="https://github.com/weebik/weebsite/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/weebik/weebsite/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -44,21 +41,19 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#structure">Project Structure</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#contributing">Contributing</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#reporting-issues">Reporting issues</a></li>
+        <li><a href="#suggesting-improvements">Suggesting improvements</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#todos">Todo</a></li>
   </ol>
 </details>
 
@@ -67,9 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `weebik`, `weebsite`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This project is built with React framework using TypeScript. Some components are from MaterialUI and the styles are written in pure css. The backend and CMS is based on Strapi with various plugins like Internationalization and EmailPlugin. Frontend is deployed on Vercel, backend is deployed on Render. The backend has been linked to Supabase Database that stores content of the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,6 +73,64 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ![CSS][CSS3]
 [![Strapi][Strapi]][Strapi-url]
 [![MUI][MUI]][MUI-url]
+[![Vercel][Vercel]][Vercel-url]
+[![Render][Render]][Render-url]
+[![Supabase][Supabase]][Supabase-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Communication
+
+<img src="images/communication.png" alt="Logo" width="700" height="360">
+
+### Project Structure
+
+```
+weebsite/
+├── backend/
+│   ├── public/
+│   ├── src/
+│   │   └── api/
+│   └── types/
+└── frontent/
+    ├── public/
+    ├── src/
+    │   ├── assets/
+    │   ├── components/
+    │   ├── hooks/
+    │   ├── layout/
+    │   ├── pages/
+    │   ├── routes/
+    │   ├── styles/
+    │   ├── types/
+    │   ├── utils/
+    │   ├── App.tsx
+    │   ├── index.css
+    │   └── main.tsx
+    └── index.html
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+Thank you for your interest in contributing to my personal CV website! Your feedback and suggestions are invaluable in making this project better. Below are some ways you can contribute:
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Reporting Issues  
+If you find any bugs or issues, please let me know by creating a [GitHub issue](https://github.com/weebik/weebsite/issues/new?labels=bug&template=bug-report---.md). When reporting, try to include:  
+- A clear description of the issue.  
+- Steps to reproduce the problem.  
+- Screenshots or error messages, if applicable.  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Suggesting Improvements  
+Your ideas on how to improve the project are always welcome! Feel free to:  
+- Suggest ways to optimize the code for better performance.  
+- Propose changes to make the code more readable and maintainable.  
+- Recommend new features or enhancements that align with the project's goals. You can do that via [Request feature](https://github.com/weebik/weebsite/issues/new?labels=enhancement&template=feature-request---.md) form.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +146,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Krystian Ćwikliński - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Krystian Ćwikliński - [@twitter_handle](https://twitter.com/twitter_handle) - krystian.samaa@gmail.com
 
 Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/weebsite)
 
@@ -104,11 +155,11 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Todo
 
-* []()
-* []()
-* []()
+* Improvments in mobile views and responsiveness
+* Changes whithin backend - frontend communication
+* Code refactor
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,3 +191,9 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [Strapi-url]: https://strapi.io
 [MUI]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
 [MUI-url]: https://mui.com/material-ui/
+[Vercel]:https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]:https://vercel.com
+[Render]:https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white
+[Render-url]:https://render.com
+[Supabase]:https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white
+[Supabase-url]:https://supabase.com
