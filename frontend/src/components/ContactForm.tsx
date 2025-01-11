@@ -188,7 +188,7 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
               </Button>
             ) : (
               <ReCAPTCHA
-                sitekey={process.env.RECAPTCHA_PUBLIC_KEY || ""}
+                sitekey={process.env.REACT_APP_RECAPTCHA_KEY || ""}
                 onChange={handleCaptchaChange}
                 theme="dark"
                 size="normal"
