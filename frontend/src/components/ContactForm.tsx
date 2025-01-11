@@ -4,6 +4,7 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import "../styles/contactForm.css";
 import MediaLinks from "./MediaLinks";
 import ReCAPTCHA from "react-google-recaptcha";
+import { getApiUrl } from "../utils/apiConfig";
 
 interface contactFormProps {
   text: string;
@@ -58,7 +59,7 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://localhost:1337/api/contact-forms", {
+      const response = await fetch(getApiUrl("api/contact-forms"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

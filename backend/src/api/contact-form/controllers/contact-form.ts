@@ -11,7 +11,6 @@ export default factories.createCoreController(
     async create(ctx) {
       const { captcha, ...formData } = ctx.request.body.data;
 
-      // Weryfikacja CAPTCHA
       try {
         const captchaResponse = await axios.post(
           "https://www.google.com/recaptcha/api/siteverify",
@@ -28,7 +27,6 @@ export default factories.createCoreController(
           return ctx.badRequest("Invalid CAPTCHA verification");
         }
 
-        // Wywołanie domyślnego create z coreController
         const response = await super.create(ctx);
         return response;
       } catch (error) {
