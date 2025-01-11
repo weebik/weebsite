@@ -1,5 +1,5 @@
 .timeline-title {
-  color: white;
+  color: var(--text);
   font-size: 1.5rem;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 }
 
 .timeline-description {
-  color: white;
+  color: var(--sec1);
   font-size: 1rem;
   display: flex;
   text-align: center;

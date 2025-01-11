@@ -22,11 +22,11 @@
 
 .footer-text {
   font-size: 0.8rem;
-  color: #fff;
+  color: var(--text);
 }
 
 .footer-content {
-  color: #fff;
+  color: var(--text);
   width: 100%;
 }
 
