@@ -32,6 +32,10 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
     return emailRegex.test(email);
   };
 
+  const sanitizeInput = (input: string) => {
+    return input.replace(/['"<>%;()&]/g, "");
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,6 +61,10 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
       return;
     }
 
+    const sanitizedName = sanitizeInput(formData.name);
+    const sanitizedEmail = sanitizeInput(formData.email);
+    const sanitizedMessage = sanitizeInput(formData.message);
+
     setIsSubmitting(true);
     try {
       const response = await fetch(getApiUrl("/api/contact-forms"), {
@@ -66,9 +74,9 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
         },
         body: JSON.stringify({
           data: {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
+            name: sanitizedName,
+            email: sanitizedEmail,
+            message: sanitizedMessage,
             captcha: captchaToken,
           },
         }),
