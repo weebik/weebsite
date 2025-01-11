@@ -59,7 +59,7 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch(getApiUrl("api/contact-forms"), {
+      const response = await fetch(getApiUrl("/api/contact-forms"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
