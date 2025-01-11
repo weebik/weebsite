@@ -1,14 +1,27 @@
 .mail-container {
-  font-size: 2rem;
   z-index: -1;
   width: 100%;
-  border-radius: 2vw;
-  padding: 2vw;
-  background: rgba(32, 46, 66, 1);
-  background: linear-gradient(
-    180deg,
-    rgba(32, 46, 66, 1) 0%,
-    rgba(33, 32, 71, 1) 100%
-  );
+  border-radius: 50px;
+  padding: 3vh 3vw;
+  background: linear-gradient(180deg, var(--sec3) 0%, var(--pri4) 100%);
   box-sizing: border-box;
+}
+
+.mail-text {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text);
+  margin: 3vh 5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .mail-container {
+    border-radius: 30px;
+    padding: 2vh 4vw;
+  }
+
+  .mail-text {
+    font-size: 1.2rem;
+    margin: 1vh 3vw;
+  }
 }

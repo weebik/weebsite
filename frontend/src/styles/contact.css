@@ -22,12 +22,12 @@
   align-items: center;
   margin-top: -20%;
   padding-bottom: 200px;
-  filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
+  filter: drop-shadow(0 0 20px var(--pri4));
 }
 
 .contact-title {
   font-size: 4rem;
-  color: white;
+  color: var(--text);
   font-weight: bold;
   margin-top: 80px;
   margin-bottom: 80px;
@@ -60,7 +60,6 @@
   .contact-content {
     background-size: 200% 100%;
     margin-top: -15%;
-    filter: drop-shadow(0 0 20px rgba(33, 32, 71, 1));
   }
 
   .contact-title {

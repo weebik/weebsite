@@ -5,24 +5,33 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import "../styles/mediaLinks.css";
 
 function MediaLinks() {
+  const style = { cursor: "pointer", "&:hover": { color: "var(--pri2)" } };
   return (
     <div className="media-links">
-      <FacebookIcon
-        fontSize="large"
-        sx={{ cursor: "pointer", "&:hover": { color: "#1877f2" } }}
-      />
-      <LinkedInIcon
-        fontSize="large"
-        sx={{ cursor: "pointer", "&:hover": { color: "#0a66c2" } }}
-      />
-      <GitHubIcon
-        fontSize="large"
-        sx={{ cursor: "pointer", "&:hover": { color: "#171515" } }}
-      />
-      <InstagramIcon
-        fontSize="large"
-        sx={{ cursor: "pointer", "&:hover": { color: "#e4405f" } }}
-      />
+      <a
+        href="https://www.facebook.com/weebiik"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FacebookIcon fontSize="large" sx={style} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/weebik"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <LinkedInIcon fontSize="large" sx={style} />
+      </a>
+      <a href="https://github.com/weebik" target="_blank" rel="noreferrer">
+        <GitHubIcon fontSize="large" sx={style} />
+      </a>
+      <a
+        href="https://www.instagram.com/_weebik_"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <InstagramIcon fontSize="large" sx={style} />
+      </a>
     </div>
   );
 }

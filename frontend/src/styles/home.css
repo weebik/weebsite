@@ -28,7 +28,7 @@
 
 .home-title {
   font-size: 4rem;
-  color: white;
+  color: var(--text);
   font-weight: bold;
 }
 
@@ -65,7 +65,7 @@
 
 .home-content .cv-download {
   width: 20%;
-  color: white;
+  color: var(--text);
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
@@ -74,12 +74,7 @@
   margin-top: 2rem;
   padding: 1rem;
   cursor: pointer;
-  background: rgb(158, 109, 200);
-  background: linear-gradient(
-    180deg,
-    rgba(158, 109, 200, 1) 0%,
-    rgba(75, 109, 133, 1) 100%
-  );
+  background: linear-gradient(180deg, var(--pri2) 0%, var(--sec2) 100%);
   border-radius: 115px;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.15));
   &:hover {
@@ -89,7 +84,7 @@
 }
 
 .text-title {
-  color: white;
+  color: var(--text);
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -97,7 +92,7 @@
 }
 
 .home-content .text-content {
-  color: white;
+  color: var(--sec1);
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: auto;
@@ -166,7 +161,6 @@
 
   .home-title {
     font-size: 2.5rem;
-    color: white;
     font-weight: bold;
   }
 

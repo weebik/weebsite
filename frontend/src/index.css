@@ -1,11 +1,7 @@
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(
-    90deg,
-    rgba(22, 34, 55, 1) 0%,
-    rgba(21, 28, 53, 1) 100%
-  );
+  background: linear-gradient(90deg, var(--sec4) 0%, rgba(21, 28, 53, 1) 100%);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -13,9 +9,19 @@ body {
 
 #root {
   --bg: rgba(22, 34, 55, 1);
-  --clr1:
-  --clr2:
-  --clr3:
-  --clr4:
+  --text: rgba(255, 255, 255, 1);
+
+  --pri1: rgba(212, 184, 241, 1);
+  --pri2: rgba(158, 109, 200, 1);
+  --pri3: rgba(62, 55, 126, 1);
+  --pri4: rgba(33, 32, 71, 1);
+
+  --sec1: rgba(133, 163, 171, 1);
+  --sec2: rgba(75, 109, 133, 1);
+  --sec3: rgba(32, 46, 66, 1);
+  --sec4: rgba(22, 34, 55, 1);
+
+  z-index: 0;
   min-height: 100vh;
+  background-color: var(--bg);
 }

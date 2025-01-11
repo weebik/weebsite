@@ -22,10 +22,10 @@ function ImageCarousel() {
     <div className="carousel-container">
       <div className="photo-clipper">
         <Carousel
+          changeOnFirstRender={true}
           autoPlay={true}
-          changeOnFirstRender={false}
           className="carousel-clipper"
-          sx={{ width: "100%", padding: "0", margin: "0" }}
+          sx={{ height: "100%", width: "100%", padding: "0", margin: "0" }}
         >
           {carouselItems.map((item, index) => (
             <BorderedImage key={index} src={item.src} alt="carousel-item" />

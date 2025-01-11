@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.media-links a {
+  color: var(--text);
+}
+
 @media screen and (max-width: 768px) {
   .media-links {
     gap: 15px;

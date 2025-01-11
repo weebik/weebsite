@@ -11,9 +11,10 @@
   width: calc(50% - 10px);
   box-sizing: border-box;
   overflow: hidden;
-  opacity: 0.9;
+  opacity: 0.8;
   border-radius: 20px;
   transition: all 0.2s;
+  background-color: var(--pri2);
 }
 
 .repo-list a img {
@@ -23,6 +24,7 @@
   object-fit: cover;
   &:hover {
     scale: 1.05;
+    opacity: 0.7;
   }
   transition: all 0.2s;
 }

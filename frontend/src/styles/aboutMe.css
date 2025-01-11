@@ -32,11 +32,13 @@
   padding: 10vw 0;
   margin-top: -10%;
   background-position: center;
-  filter: drop-shadow(0 0 20px rgba(212, 184, 241, 0.15));
+  filter: drop-shadow(
+    0 0 20px color-mix(in srgb, var(--pri1) 15%, transparent 85%)
+  );
 }
 .about-title {
   font-size: 4rem;
-  color: white;
+  color: var(--text);
   font-weight: bold;
 }
 
@@ -62,7 +64,7 @@
 }
 
 .about-content .text-title {
-  color: white;
+  color: var(--text);
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -70,7 +72,7 @@
 }
 
 .about-content .text-content {
-  color: white;
+  color: var(--sec1);
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: justify;
@@ -102,7 +104,6 @@
 
   .about-title {
     font-size: 2.5rem;
-    color: white;
     font-weight: bold;
   }
 
