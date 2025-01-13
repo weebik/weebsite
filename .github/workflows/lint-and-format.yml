@@ -21,19 +21,19 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 20
 
-    # 3. Lint and format frontend
-    - name: Lint and format frontend
+   # 3. Install dependencies and fix frontend issues
+    - name: Fix and lint frontend
       working-directory: ./frontend
       run: |
         npm install
-        npm run lint
-        npm run format:check
+        npm run lint:fix
+        npm run format
 
-    # 4. Format backend
-    - name: Format backend
+    # 4. Install dependencies and fix backend issues
+    - name: Fix and format backend
       working-directory: ./backend
       run: |
         npm install
-        npm run format:check
+        npm run format
