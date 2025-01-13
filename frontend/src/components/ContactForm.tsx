@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { TextField, Box, Stack, Button, CircularProgress } from "@mui/material";
+import {
+  TextField,
+  Box,
+  Stack,
+  Button,
+  CircularProgress,
+  Snackbar,
+  Alert,
+} from "@mui/material";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import "../styles/contactForm.css";
 import MediaLinks from "./MediaLinks";
@@ -26,6 +34,12 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
   });
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success" as "success" | "error",
+  });
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,16 +97,28 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        setSnackbar({
+          open: true,
+          message: "Message sent successfully!",
+          severity: "success",
+        });
         setFormData({ name: "", email: "", message: "" });
         setCaptchaToken(null);
       } else {
         const errorData = await response.json();
-        alert(`Error: ${errorData.error.message}`);
+        setSnackbar({
+          open: true,
+          message: `Error: ${errorData.error.message}`,
+          severity: "error",
+        });
       }
     } catch (error) {
       console.error("Error sending the form:", error);
-      alert("An unexpected error occurred.");
+      setSnackbar({
+        open: true,
+        message: "An unexpected error occurred.",
+        severity: "error",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -117,6 +143,10 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
       outline: "none",
       filter: "drop-shadow(0 0 0.3vw rgba(133, 163, 171, 0.4))",
     },
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
   };
 
   return (
@@ -206,6 +236,20 @@ function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
           </Box>
         </Stack>
       </Box>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbar.severity}
+          sx={{ width: "100%" }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
