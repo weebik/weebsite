@@ -26,9 +26,9 @@
     <br />
     <a href="https://weebsitecv.vercel.app">Visit</a>
     ·
-    <a href="https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=">Report Bug</a>
+    <a href="https://github.com/weebik/weebsite/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
+    <a href="https://github.com/weebik/weebsite/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -119,7 +119,7 @@ Thank you for your interest in contributing to my personal CV website! Your feed
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Reporting Issues  
-If you find any bugs or issues, please let me know by creating a [GitHub issue](https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=). When reporting, try to include:  
+If you find any bugs or issues, please let me know by creating a [GitHub issue](https://github.com/weebik/weebsite/issues/new?labels=bug&template=bug-report---.md). When reporting, try to include:  
 - A clear description of the issue.  
 - Steps to reproduce the problem.  
 - Screenshots or error messages, if applicable.  
@@ -130,7 +130,7 @@ If you find any bugs or issues, please let me know by creating a [GitHub issue](
 Your ideas on how to improve the project are always welcome! Feel free to:  
 - Suggest ways to optimize the code for better performance.  
 - Propose changes to make the code more readable and maintainable.  
-- Recommend new features or enhancements that align with the project's goals. You can do that via [Request feature](https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=) form.
+- Recommend new features or enhancements that align with the project's goals. You can do that via [Request feature](https://github.com/weebik/weebsite/issues/new?labels=enhancement&template=feature-request---.md) form.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +146,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Krystian Ćwikliński - krystian.samaa@gmail.com
+Krystian Ćwikliński - [@twitter_handle](https://twitter.com/twitter_handle) - krystian.samaa@gmail.com
 
 Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/weebsite)
 
@@ -160,8 +160,6 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 * Improvments in mobile views and responsiveness
 * Changes whithin backend - frontend communication
 * Code refactor
-* Proper error handler
-* Toast/snackbar instead of alert 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
