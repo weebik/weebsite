@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "@mui/material";
-// import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
+import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useLanguage } from "../hooks/useLanguage";
 import background from "../assets/background.mp4";
 import "../styles/home.css";
 import TechList from "../components/TechList";
-import endpoints, { fetchData } from "../utils/apiConfig";
+import endpoints, { downloadFile, fetchData } from "../utils/apiConfig";
 
 function Home() {
   interface HomeData {
@@ -38,9 +38,9 @@ function Home() {
     fetchHomeData();
   }, [language]);
 
-  // const handleDownload = async () => {
-  //   await downloadFile(1);
-  // };
+  const handleDownload = async () => {
+    await downloadFile(language);
+  };
 
   if (!homeData) {
     return <LoadingSpinner />;
@@ -75,7 +75,7 @@ function Home() {
           <div className="intr-container">
             <div className="text-title">{homeData.introductionTitle}</div>
             <div className="text-content">{homeData.introductionText}</div>
-            {/* <div className="cv-download" onClick={handleDownload}>
+            <div className="cv-download" onClick={handleDownload}>
               <FileDownloadRoundedIcon
                 fontSize="large"
                 sx={{
@@ -84,7 +84,7 @@ function Home() {
                 }}
               />
               <div className="cv-download-text">{homeData.downloadButton}</div>
-            </div> */}
+            </div>
           </div>
           <div className="tech-container">
             <div className="text-title">{homeData.technologiesTitle}</div>

@@ -1,10 +1,6 @@
-import { useState, ReactNode } from "react";
-import { language } from "../types/language.type.ts";
+import { useState } from "react";
+import { language, LanguageProviderProps } from "../types/language.type.ts";
 import { LanguageContext } from "./LanguageContext.ts";
-
-interface LanguageProviderProps {
-  children: ReactNode;
-}
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguage] = useState<language>("en");

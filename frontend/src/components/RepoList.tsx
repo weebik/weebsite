@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useError } from "../hooks/useError";
 import Repo from "./Repo";
 import { RepoData } from "../types/repo.type";
 import "../styles/repoList.css";
 
 function RepoList() {
   const [repos, setRepos] = useState<RepoData[]>([]);
-  const { setError } = useError();
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -22,13 +20,12 @@ function RepoList() {
         const data: RepoData[] = await response.json();
         setRepos(data);
       } catch (error) {
-        setError("Unable to load data. Please try again later.");
         console.error("Error fetching repo data: ", error);
       }
     };
 
     fetchRepos();
-  }, [setError]);
+  });
 
   function getImageUrl(repo: RepoData) {
     const { owner, name, id } = repo;

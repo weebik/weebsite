@@ -4,24 +4,10 @@ import routes from "../routes/routes";
 import { useLanguage } from "../hooks/useLanguage";
 import english from "../assets/english.svg";
 import polish from "../assets/polish.svg";
+import { navTranslations } from "../consts/navTranslations";
 
 function DesktopNav() {
   const { language, toggleLanguage } = useLanguage();
-
-  const translations: { [key: string]: { [key: string]: string } } = {
-    pl: {
-      "/home": "Główna",
-      "/about-me": "O mnie",
-      "/portfolio": "Portfolio",
-      "/contact": "Kontakt",
-    },
-    en: {
-      "/home": "Home",
-      "/about-me": "About Me",
-      "/portfolio": "Portfolio",
-      "/contact": "Contact",
-    },
-  };
 
   return (
     <AppBar
@@ -38,7 +24,7 @@ function DesktopNav() {
       <Toolbar className="navBar">
         {routes.map(
           ({ path }) =>
-            translations[language][path] && (
+            navTranslations[language][path] && (
               <NavLink
                 key={path}
                 to={path}
@@ -60,7 +46,7 @@ function DesktopNav() {
                     variant: "button",
                   }}
                 >
-                  {translations[language][path]}
+                  {navTranslations[language][path]}
                 </Typography>
               </NavLink>
             )
