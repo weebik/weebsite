@@ -3,6 +3,7 @@
  */
 
 import { factories } from "@strapi/strapi";
+import nodemailer from "nodemailer";
 import axios from "axios";
 
 export default factories.createCoreController(
@@ -27,22 +28,32 @@ export default factories.createCoreController(
           return ctx.badRequest("Invalid CAPTCHA verification");
         }
 
-        await strapi.plugins["email"].services.email.send({
-          to: process.env.EMAIL_TO,
-          subject: "New mail from WeebsiteCV",
-          text: `Imię i nazwisko: ${formData.name}
-                 E-mail: ${formData.email}
-                 Wiadomość: ${formData.message}`,
-          html: `<h1>${formData.name}</h1>
-                 <h2>${formData.email}</h2>
-                 <p>${formData.message}</p>`,
+        const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS,
+          },
         });
+
+        const mailOptions = {
+          from: process.env.GMAIL_USER,
+          to: process.env.MAIL_RECEIVER,
+          subject: "New mail from WeebsiteCV",
+          text: `            
+            Imię i nazwisko: ${formData.name || "Brak danych"}
+            E-mail: ${formData.email || "Brak danych"}
+            Wiadomość: ${formData.message || "Brak treści"}
+          `,
+        };
+
+        await transporter.sendMail(mailOptions);
 
         const response = await super.create(ctx);
         return response;
       } catch (error) {
-        console.error("Error verifying CAPTCHA:", error);
-        return ctx.internalServerError("CAPTCHA verification failed");
+        console.error("Error while processing form:", error);
+        return ctx.internalServerError("Error while processing form");
       }
     },
   })
