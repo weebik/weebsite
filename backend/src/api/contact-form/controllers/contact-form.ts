@@ -39,11 +39,14 @@ export default factories.createCoreController(
         const mailOptions = {
           from: process.env.GMAIL_USER,
           to: process.env.MAIL_RECEIVER,
-          subject: "New mail from WeebsiteCV",
-          text: `            
-            Imię i nazwisko: ${formData.name || "Brak danych"}
-            E-mail: ${formData.email || "Brak danych"}
-            Wiadomość: ${formData.message || "Brak treści"}
+          subject: `Contact from ${formData.email}`,
+          text: `
+            ________________________________________            
+            From: ${formData.name}
+            ________________________________________
+            Contact e-mail: ${formData.email}
+            ________________________________________
+            Message: ${formData.message}
           `,
         };
 
