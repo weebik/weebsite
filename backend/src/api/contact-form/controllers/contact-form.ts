@@ -27,6 +27,17 @@ export default factories.createCoreController(
           return ctx.badRequest("Invalid CAPTCHA verification");
         }
 
+        await strapi.plugins["email"].services.email.send({
+          to: process.env.EMAIL_TO,
+          subject: "New mail from WeebsiteCV",
+          text: `Imię i nazwisko: ${formData.name}
+                 E-mail: ${formData.email}
+                 Wiadomość: ${formData.message}`,
+          html: `<h1>${formData.name}</h1>
+                 <h2>${formData.email}</h2>
+                 <p>${formData.message}</p>`,
+        });
+
         const response = await super.create(ctx);
         return response;
       } catch (error) {
