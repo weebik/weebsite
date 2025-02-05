@@ -29,10 +29,13 @@ export default factories.createCoreController(
 
         await strapi.plugins["email"].services.email.send({
           to: process.env.EMAIL_TO,
-          from: formData.email,
-          subject: "Mail from WeebsiteCV",
-          text: formData.message,
-          html: `<p>${formData.message}</p>`,
+          subject: "New mail from WeebsiteCV",
+          text: `Imię i nazwisko: ${formData.name}
+                 E-mail: ${formData.email}
+                 Wiadomość: ${formData.message}`,
+          html: `<h1>${formData.name}</h1>
+                 <h2>${formData.email}</h2>
+                 <p>${formData.message}</p>`,
         });
 
         const response = await super.create(ctx);
