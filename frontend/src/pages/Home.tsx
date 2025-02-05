@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "@mui/material";
-import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
+// import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useLanguage } from "../hooks/useLanguage";
-import { getApiUrl } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
 import "../styles/home.css";
 import TechList from "../components/TechList";
+import endpoints, { fetchData } from "../utils/apiConfig";
 
 function Home() {
   interface HomeData {
@@ -32,40 +32,15 @@ function Home() {
 
   useEffect(() => {
     const fetchHomeData = async () => {
-      try {
-        const response = await fetch(
-          getApiUrl(`/api/homes?locale=${language}`)
-        );
-        const data = await response.json();
-        setHomeData(data.data[0]);
-      } catch (error) {
-        console.error("Error fetching about-me data: ", error);
-      }
+      const data = await fetchData<HomeData>(endpoints.home(language));
+      setHomeData(data);
     };
     fetchHomeData();
   }, [language]);
 
-  const handleDownload = async () => {
-    try {
-      const response = await fetch(getApiUrl(`/api/upload/files/13`));
-      const fileData = await response.json();
-      const fileUrl = getApiUrl(fileData.url);
-      const fileResponse = await fetch(fileUrl);
-      if (!fileResponse) {
-        console.error("Error fetching actual file");
-        return;
-      }
-      const blob = await fileResponse.blob();
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = fileData.name;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Error fetching cv file: ", error);
-    }
-  };
+  // const handleDownload = async () => {
+  //   await downloadFile(1);
+  // };
 
   if (!homeData) {
     return <LoadingSpinner />;
@@ -100,7 +75,7 @@ function Home() {
           <div className="intr-container">
             <div className="text-title">{homeData.introductionTitle}</div>
             <div className="text-content">{homeData.introductionText}</div>
-            <div className="cv-download" onClick={handleDownload}>
+            {/* <div className="cv-download" onClick={handleDownload}>
               <FileDownloadRoundedIcon
                 fontSize="large"
                 sx={{
@@ -109,7 +84,7 @@ function Home() {
                 }}
               />
               <div className="cv-download-text">{homeData.downloadButton}</div>
-            </div>
+            </div> */}
           </div>
           <div className="tech-container">
             <div className="text-title">{homeData.technologiesTitle}</div>

@@ -1,15 +1,13 @@
 import { useLanguage } from "../hooks/useLanguage";
-import { useError } from "../hooks/useError";
 import { useEffect, useState } from "react";
+import endpoints, { fetchData } from "../utils/apiConfig";
 import ImageCarousel from "../components/ImageCarousel";
 import BorderedImage from "../components/BorderedImage";
-import TimelineComponent, {
-  TimelineData,
-} from "../components/TimelineComponent";
+import TimelineComponent from "../components/TimelineComponent";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
-import { getApiUrl } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
+import { TimelineData } from "../types/timeline.type";
 import "../styles/aboutMe.css";
 
 function AboutMe() {
@@ -25,24 +23,15 @@ function AboutMe() {
   }
 
   const { language } = useLanguage();
-  const { setError } = useError();
   const [aboutMeData, setAboutMeData] = useState<AboutMeData | null>(null);
 
   useEffect(() => {
     const fetchAboutData = async () => {
-      try {
-        const response = await fetch(
-          getApiUrl(`/api/about-mes?locale=${language}`)
-        );
-        const data = await response.json();
-        setAboutMeData(data.data[0]);
-      } catch (error) {
-        setError("Unable to load data. Please try again later.");
-        console.error("Error fetching about-me data: ", error);
-      }
+      const data = await fetchData<AboutMeData>(endpoints.aboutMe(language));
+      setAboutMeData(data);
     };
     fetchAboutData();
-  }, [language, setError]);
+  }, [language]);
 
   if (!aboutMeData) {
     return <LoadingSpinner />;

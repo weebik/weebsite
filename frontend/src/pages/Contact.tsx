@@ -3,7 +3,7 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useLanguage } from "../hooks/useLanguage";
-import { getApiUrl } from "../utils/apiConfig";
+import endpoints, { fetchData } from "../utils/apiConfig";
 import background from "../assets/background.mp4";
 import "../styles/contact.css";
 
@@ -21,15 +21,8 @@ function Contact() {
 
   useEffect(() => {
     const fetchContactData = async () => {
-      try {
-        const response = await fetch(
-          getApiUrl(`/api/contacts?locale=${language}`)
-        );
-        const data = await response.json();
-        setContactData(data.data[0]);
-      } catch (error) {
-        console.error("Error fetching about-me data: ", error);
-      }
+      const data = await fetchData<ContactData>(endpoints.contact(language));
+      setContactData(data);
     };
     fetchContactData();
   }, [language]);

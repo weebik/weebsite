@@ -1,16 +1,8 @@
 import { useEffect, useState } from "react";
 import { useError } from "../hooks/useError";
 import Repo from "./Repo";
+import { RepoData } from "../types/repo.type";
 import "../styles/repoList.css";
-
-interface RepoData {
-  id: number;
-  name: string;
-  html_url: string;
-  owner: {
-    login: string;
-  };
-}
 
 function RepoList() {
   const [repos, setRepos] = useState<RepoData[]>([]);
