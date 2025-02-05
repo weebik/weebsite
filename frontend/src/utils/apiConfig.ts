@@ -8,7 +8,8 @@ export const endpoints = {
   portfolio: (locale: string) => `/api/portfolios?locale=${locale}`,
   contact: (locale: string) => `/api/contacts?locale=${locale}`,
   contactForm: () => "/api/contact-forms",
-  // downloadFile: (locale: string) => `/api/homes?populate=cvFile`,
+  downloadFile: (locale: string) =>
+    `/api/cvs?populate=${locale == "en" ? "cv_en" : "cv_pl"}`,
 };
 
 export async function fetchData<T>(endpoint: string): Promise<T | null> {
@@ -33,27 +34,35 @@ export async function postData<T>(
     return null;
   }
 }
+export async function downloadFile(locale: string): Promise<void> {
+  try {
+    const fileData = await fetchData<{
+      [key: string]: { url: string; name: string };
+    }>(endpoints.downloadFile(locale));
 
-// export async function downloadFile(fileId: number): Promise<void> {
-//   try {
-//     const fileData = await fetchData<{ url: string; name: string }>(
-//       endpoints.downloadFile(fileId)
-//     );
-//     if (!fileData) throw new Error("File data not found");
+    if (!fileData) throw new Error("File data not found");
 
-//     const fileResponse = await axios.get(`${API_BASE_URL}${fileData.url}`, {
-//       responseType: "blob",
-//     });
-//     const blob = new Blob([fileResponse.data]);
-//     const link = document.createElement("a");
-//     link.href = window.URL.createObjectURL(blob);
-//     link.download = fileData.name;
-//     document.body.appendChild(link);
-//     link.click();
-//     document.body.removeChild(link);
-//   } catch (error) {
-//     console.error("Error downloading file: ", error);
-//   }
-// }
+    const fileKey = locale === "en" ? "cv_en" : "cv_pl";
+    const file = fileData[fileKey];
+
+    if (!file || !file.url || !file.name) {
+      throw new Error("File metadata is missing");
+    }
+
+    const fileResponse = await axios.get(file.url, {
+      responseType: "blob",
+    });
+
+    const blob = new Blob([fileResponse.data], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } catch (error) {
+    console.error("Error downloading file: ", error);
+  }
+}
 
 export default endpoints;

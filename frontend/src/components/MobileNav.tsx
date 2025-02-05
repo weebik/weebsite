@@ -5,26 +5,11 @@ import routes from "../routes/routes";
 import { useLanguage } from "../hooks/useLanguage";
 import english from "../assets/english.svg";
 import polish from "../assets/polish.svg";
+import { navTranslations } from "../consts/navTranslations";
 
 function MobileNav() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const translations: { [key: string]: { [key: string]: string } } = {
-    pl: {
-      "/home": "Główna",
-      "/about-me": "O mnie",
-      "/portfolio": "Portfolio",
-      "/contact": "Kontakt",
-    },
-    en: {
-      "/home": "Home",
-      "/about-me": "About Me",
-      "/portfolio": "Portfolio",
-      "/contact": "Contact",
-    },
-  };
-
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
@@ -70,7 +55,7 @@ function MobileNav() {
         >
           {routes.map(
             ({ path }) =>
-              translations[language][path] && (
+              navTranslations[language][path] && (
                 <NavLink
                   key={path}
                   to={path}
@@ -87,7 +72,7 @@ function MobileNav() {
                     textAlign: "center",
                   }}
                 >
-                  {translations[language][path]}
+                  {navTranslations[language][path]}
                 </NavLink>
               )
           )}
