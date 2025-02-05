@@ -13,12 +13,14 @@ import "../styles/aboutMe.css";
 function AboutMe() {
   interface AboutMeData {
     title: string;
+    introductionPhoto: { url: string };
     introductionTitle: string;
     introductionText: string;
     educationTitle: string;
     educationText: string;
     hobbiesTitle: string;
     hobbiesText: string;
+    hobbiesPhotos: { url: string }[];
     educationTimeline: TimelineData[];
   }
 
@@ -56,9 +58,7 @@ function AboutMe() {
         <div className="about-content">
           <div className="photo-container">
             <BorderedImage
-              src={
-                "https://nnlmhenetlckeqyvywiv.supabase.co/storage/v1/object/public/weebsite-server-db/files/me.png-87b4c994b3f49dc5d748aa101f8ab891.png"
-              }
+              src={aboutMeData.introductionPhoto.url}
               alt="avatar"
             />
           </div>
@@ -72,7 +72,7 @@ function AboutMe() {
           </div>
           <TimelineComponent timelineData={aboutMeData.educationTimeline} />
           <div className="container">
-            <ImageCarousel />
+            <ImageCarousel items={aboutMeData.hobbiesPhotos} />
           </div>
           <div className="container">
             <div className="text-title">{aboutMeData.hobbiesTitle}</div>
