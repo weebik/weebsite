@@ -1,5 +1,5 @@
 import "../styles/borderedImage.css";
-import { BorderedImageProps } from "../types/BorderedImage.type";
+import { BorderedImageProps } from "../types/borderedImage.type";
 
 function BorderedImage({ src, alt }: BorderedImageProps) {
   return (

@@ -4,7 +4,7 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import "../styles/contactForm.css";
 import MediaLinks from "./MediaLinks";
 import ReCAPTCHA from "react-google-recaptcha";
-import { ContactFormProps } from "../types/ContactForm.type";
+import { ContactFormProps } from "../types/contactForm.type";
 import {
   sanitizeInput,
   validateEmail,
