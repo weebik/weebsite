@@ -34,7 +34,6 @@ function Portfolio() {
         endpoints.portfolio(language)
       );
       setPortfolioData(data);
-      console.log(data);
     };
     fetchPortfolioData();
   }, [language]);
