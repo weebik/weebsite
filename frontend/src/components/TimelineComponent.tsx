@@ -7,16 +7,7 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import "../styles/timelineComponent.css";
-
-interface TimelineComponentProps {
-  timelineData: TimelineData[];
-}
-
-export interface TimelineData {
-  title: string;
-  description: string;
-  date: string;
-}
+import { TimelineComponentProps } from "../types/timeline.type";
 
 function TimelineComponent({ timelineData }: TimelineComponentProps) {
   return (

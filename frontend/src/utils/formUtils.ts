@@ -1,4 +1,4 @@
-import { getApiUrl } from "./apiConfig";
+import { postData, endpoints } from "./apiConfig";
 
 export const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,24 +16,15 @@ export const submitContactForm = async (
   onError: (errorMessage: string) => void
 ): Promise<void> => {
   try {
-    const response = await fetch(getApiUrl("/api/contact-forms"), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        data: {
-          ...formData,
-          captcha: captchaToken,
-        },
-      }),
+    const response = await postData(endpoints.contactForm(), {
+      ...formData,
+      captcha: captchaToken,
     });
 
-    if (response.ok) {
+    if (response) {
       onSuccess();
     } else {
-      const errorData = await response.json();
-      onError(errorData.error.message || "Failed to send the message.");
+      onError("Failed to send the message.");
     }
   } catch (error) {
     console.error("Error during form submission:", error);

@@ -4,20 +4,14 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import "../styles/contactForm.css";
 import MediaLinks from "./MediaLinks";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { ContactFormProps } from "../types/contactForm.type";
 import {
   sanitizeInput,
   validateEmail,
   submitContactForm,
 } from "../utils/formUtils";
 
-interface contactFormProps {
-  text: string;
-  nameLabel: string;
-  messageLabel: string;
-}
-
-function ContactForm({ text, nameLabel, messageLabel }: contactFormProps) {
+function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

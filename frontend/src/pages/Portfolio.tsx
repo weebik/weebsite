@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import TimelineComponent, {
-  TimelineData,
-} from "../components/TimelineComponent";
+import { useLanguage } from "../hooks/useLanguage";
+import endpoints, { fetchData } from "../utils/apiConfig";
+import TimelineComponent from "../components/TimelineComponent";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
-import { useLanguage } from "../hooks/useLanguage";
-import { getApiUrl } from "../utils/apiConfig";
-import background from "../assets/background.mp4";
-import "../styles/portfolio.css";
+import RepoList from "../components/RepoList";
 import SkillsList from "../components/SkillsList";
 import { SkillData } from "../types/skill.type";
-import RepoList from "../components/RepoList";
+import { TimelineData } from "../types/timeline.type";
+import background from "../assets/background.mp4";
+import "../styles/portfolio.css";
 
 function Portfolio() {
   interface PortfolioData {
@@ -31,15 +30,11 @@ function Portfolio() {
 
   useEffect(() => {
     const fetchPortfolioData = async () => {
-      try {
-        const response = await fetch(
-          getApiUrl(`/api/portfolios?locale=${language}`)
-        );
-        const data = await response.json();
-        setPortfolioData(data.data[0]);
-      } catch (error) {
-        console.error("Error fetching about-me data: ", error);
-      }
+      const data = await fetchData<PortfolioData>(
+        endpoints.portfolio(language)
+      );
+      setPortfolioData(data);
+      console.log(data);
     };
     fetchPortfolioData();
   }, [language]);

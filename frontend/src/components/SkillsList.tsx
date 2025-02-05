@@ -1,10 +1,6 @@
 import "../styles/skills.css";
-import { SkillData } from "../types/skill.type";
+import { SkillDataProps } from "../types/skill.type";
 import Skill from "./Skill";
-
-interface SkillDataProps {
-  skillData: SkillData[];
-}
 
 function SkillsList({ skillData }: SkillDataProps) {
   return (
