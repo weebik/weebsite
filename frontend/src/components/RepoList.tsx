@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Repo from "./Repo";
 import { RepoData } from "../types/repo.type";
 import "../styles/repoList.css";
+import axios from "axios";
 
 function RepoList() {
   const [repos, setRepos] = useState<RepoData[]>([]);
@@ -9,29 +10,22 @@ function RepoList() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get<RepoData[]>(
           "https://api.github.com/users/weebik/repos"
         );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data: RepoData[] = await response.json();
-        setRepos(data);
+        setRepos(response.data);
       } catch (error) {
         console.error("Error fetching repo data: ", error);
       }
     };
 
     fetchRepos();
-  });
+  }, []);
 
   function getImageUrl(repo: RepoData) {
-    const { owner, name, id } = repo;
+    const { owner, name } = repo;
     const socialPreviewUrl = `https://opengraph.githubassets.com/1/${owner.login}/${name}`;
-    const defaultImageUrl = `https://repository-images.githubusercontent.com/${id}/default.png`;
-    return socialPreviewUrl || defaultImageUrl;
+    return socialPreviewUrl;
   }
 
   return (

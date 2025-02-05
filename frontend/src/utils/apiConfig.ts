@@ -4,12 +4,12 @@ const API_BASE_URL = import.meta.env.VITE_API_HOST;
 
 export const endpoints = {
   home: (Locale: string) => `/api/homes?locale=${Locale}`,
-  aboutMe: (locale: string) => `/api/about-mes?locale=${locale}`,
+  downloadFile: (locale: string) =>
+    `/api/cvs?populate=${locale == "en" ? "cv_en" : "cv_pl"}`,
+  aboutMe: (locale: string) => `/api/about-mes?locale=${locale}&populate=*`,
   portfolio: (locale: string) => `/api/portfolios?locale=${locale}`,
   contact: (locale: string) => `/api/contacts?locale=${locale}`,
   contactForm: () => "/api/contact-forms",
-  downloadFile: (locale: string) =>
-    `/api/cvs?populate=${locale == "en" ? "cv_en" : "cv_pl"}`,
 };
 
 export async function fetchData<T>(endpoint: string): Promise<T | null> {
