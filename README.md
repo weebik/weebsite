@@ -182,8 +182,8 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [stars-url]: https://github.com/weebik/weebsite/stargazers
 [issues-shield]: https://img.shields.io/github/issues/weebik/weebsite.svg?style=for-the-badge
 [issues-url]: https://github.com/weebik/weebsite/issues
-[license-shield]: https://img.shields.io/github/license/weebik/weebsite.svg?style=for-the-badge
-[license-url]: https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
+[license-url]: https://img.shields.io/github/license/weebik/weebsite%2Ffrontend%2FLICENSE.TXT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
