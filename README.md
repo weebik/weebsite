@@ -137,12 +137,10 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 
 <!-- LICENSE -->
 ## License
+- Backend uses the **MIT Expo** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
+- Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt).
+- **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission. The exception is the background video animation, which belongs to [4k SCREENSAVERS](https://www.youtube.com/@4kSCREENSAVERS).
 
-- Backend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite).
-- Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite).
-- The source code can be used and modified **provided that a link to my repository is provided**.
-- **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission.
-- The background video animation comes from an external source and is not covered by the license of my code.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,7 +149,7 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 <!-- CONTACT -->
 ## Contact
 
-Krystian Ćwikliński - [@twitter_handle](https://twitter.com/twitter_handle) - krystian.samaa@gmail.com
+Krystian Ćwikliński - krystian.samaa@gmail.com
 
 Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/weebsite)
 
