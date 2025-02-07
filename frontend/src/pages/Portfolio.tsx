@@ -64,7 +64,10 @@ function Portfolio() {
             <div className="text-content">{portfolioData.jobsText}</div>
           </div>
           <div className="container">
-            <TimelineComponent timelineData={portfolioData.jobsTimeline} />
+            <TimelineComponent
+              timelineData={portfolioData.jobsTimeline}
+              icon={false}
+            />
           </div>
           <div className="wide-container">
             <div className="text-title">{portfolioData.skillsTitle}</div>

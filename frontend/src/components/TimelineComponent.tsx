@@ -5,11 +5,12 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import "../styles/timelineComponent.css";
 import { TimelineComponentProps } from "../types/timeline.type";
 
-function TimelineComponent({ timelineData }: TimelineComponentProps) {
+function TimelineComponent({ timelineData, icon }: TimelineComponentProps) {
   return (
     <Timeline
       position="alternate"
@@ -27,7 +28,7 @@ function TimelineComponent({ timelineData }: TimelineComponentProps) {
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot sx={{ backgroundColor: "#9E6DC8" }}>
-              <SchoolRoundedIcon />
+              {icon == true ? <SchoolRoundedIcon /> : <WorkRoundedIcon />}
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
