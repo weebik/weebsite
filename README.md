@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/weebik/weebsite">
-    <img src="images/screen.png" alt="Logo" width="700" height="360">
+    <img src="images/screen.png" alt="Logo" width="480" height="270">
   </a>
 
 <h3 align="center">weebsite</h3>
@@ -80,8 +80,9 @@ This project is built with React framework using TypeScript. Some components are
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Communication
-
-<img src="images/communication.png" alt="Logo" width="700" height="360">
+<div align="center">
+  <img src="images/comm.png" alt="Logo" width="480" height="270">
+</div>
 
 ### Project Structure
 
