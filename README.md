@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/weebik/weebsite">
-    <img src="images/screen.png" alt="Logo" width="700" height="360">
+    <img src="images/screen.png" alt="Logo" width="480" height="270">
   </a>
 
 <h3 align="center">weebsite</h3>
@@ -41,6 +41,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#communication">Communication</a></li>
         <li><a href="#structure">Project Structure</a></li>
       </ul>
     </li>
@@ -80,8 +81,9 @@ This project is built with React framework using TypeScript. Some components are
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Communication
-
-<img src="images/communication.png" alt="Logo" width="700" height="360">
+<div align="center">
+  <img src="images/comm.png" alt="Logo" width="480" height="270">
+</div>
 
 ### Project Structure
 
@@ -114,7 +116,7 @@ weebsite/
 
 <!-- CONTRIBUTING -->
 ## Contributing
-Thank you for your interest in contributing to my personal CV website! Your feedback and suggestions are invaluable in making this project better. Below are some ways you can contribute:
+Thank you for your interest in contributing to my project! Your feedback and suggestions are invaluable in making this app better. Below are some ways you can contribute:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,8 +138,10 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 
 <!-- LICENSE -->
 ## License
+- Backend uses the **MIT Expo** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
+- Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt).
+- **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission. The exception is the background video animation, which belongs to [4k SCREENSAVERS](https://www.youtube.com/@4kSCREENSAVERS).
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +150,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Krystian Ćwikliński - [@twitter_handle](https://twitter.com/twitter_handle) - krystian.samaa@gmail.com
+Krystian Ćwikliński - krystian.samaa@gmail.com
 
 Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/weebsite)
 
@@ -158,8 +162,10 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 ## Todo
 
 * Improvments in mobile views and responsiveness
-* Changes whithin backend - frontend communication
+* Some style changes (animations, icons)
+* Fix image carousel on page load
 * Code refactor
+* React hook form (?)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,8 +181,8 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [stars-url]: https://github.com/weebik/weebsite/stargazers
 [issues-shield]: https://img.shields.io/github/issues/weebik/weebsite.svg?style=for-the-badge
 [issues-url]: https://github.com/weebik/weebsite/issues
-[license-shield]: https://img.shields.io/github/license/weebik/weebsite.svg?style=for-the-badge
-[license-url]: https://github.com/weebik/weebsite/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
+[license-url]: https://img.shields.io/github/license/weebik/weebsite%2Ffrontend%2FLICENSE.TXT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

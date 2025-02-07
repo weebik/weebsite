@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-divider">
           <div className="footer-text">
-            © 2024 Krystian Ćwikliński. All rights reserved.
+            © 2025 Krystian Ćwikliński. All rights reserved.
           </div>
           <MediaLinks />
         </div>

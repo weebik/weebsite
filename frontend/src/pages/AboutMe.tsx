@@ -70,7 +70,10 @@ function AboutMe() {
             <div className="text-title">{aboutMeData.educationTitle}</div>
             <div className="text-content">{aboutMeData.educationText}</div>
           </div>
-          <TimelineComponent timelineData={aboutMeData.educationTimeline} />
+          <TimelineComponent
+            timelineData={aboutMeData.educationTimeline}
+            icon={true}
+          />
           <div className="container">
             <ImageCarousel items={aboutMeData.hobbiesPhotos} />
           </div>
