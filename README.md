@@ -41,7 +41,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#communication">Communication</a></li>
         <li><a href="#structure">Project Structure</a></li>
       </ul>
     </li>
@@ -79,11 +78,6 @@ This project is built with React framework using TypeScript. Some components are
 [![Supabase][Supabase]][Supabase-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Communication
-<div align="center">
-  <img src="images/comm.png" alt="Logo" width="480" height="270">
-</div>
 
 ### Project Structure
 
