@@ -138,7 +138,7 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 
 <!-- LICENSE -->
 ## License
-- Backend uses the **MIT Expo** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
+- Backend uses the **MIT Expat** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
 - Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt).
 - **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission. The exception is the background video animation, which belongs to [4k SCREENSAVERS](https://www.youtube.com/@4kSCREENSAVERS).
 
