@@ -115,7 +115,7 @@ weebsite/
 
 <!-- CONTRIBUTING -->
 ## Contributing
-Thank you for your interest in contributing to my personal CV website! Your feedback and suggestions are invaluable in making this project better. Below are some ways you can contribute:
+Thank you for your interest in contributing to my project! Your feedback and suggestions are invaluable in making this app better. Below are some ways you can contribute:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,7 +138,11 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+- Backend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite).
+- Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite).
+- The source code can be used and modified **provided that a link to my repository is provided**.
+- **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission.
+- The background video animation comes from an external source and is not covered by the license of my code.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,8 +163,10 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 ## Todo
 
 * Improvments in mobile views and responsiveness
-* Changes whithin backend - frontend communication
+* Some style changes (animations, icons)
+* Fix image carousel on page load
 * Code refactor
+* React hook form (?)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -177,7 +183,7 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [issues-shield]: https://img.shields.io/github/issues/weebik/weebsite.svg?style=for-the-badge
 [issues-url]: https://github.com/weebik/weebsite/issues
 [license-shield]: https://img.shields.io/github/license/weebik/weebsite.svg?style=for-the-badge
-[license-url]: https://github.com/weebik/weebsite/blob/master/LICENSE.txt
+[license-url]: https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
