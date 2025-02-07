@@ -41,6 +41,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#communication">Communication</a></li>
         <li><a href="#structure">Project Structure</a></li>
       </ul>
     </li>
