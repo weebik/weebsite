@@ -41,7 +41,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#communication">Communication</a></li>
         <li><a href="#structure">Project Structure</a></li>
       </ul>
     </li>
@@ -79,11 +78,6 @@ This project is built with React framework using TypeScript. Some components are
 [![Supabase][Supabase]][Supabase-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Communication
-<div align="center">
-  <img src="images/comm.png" alt="Logo" width="480" height="270">
-</div>
 
 ### Project Structure
 
@@ -138,7 +132,7 @@ Your ideas on how to improve the project are always welcome! Feel free to:
 
 <!-- LICENSE -->
 ## License
-- Backend uses the **MIT Expo** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
+- Backend uses the **MIT Expat** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
 - Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt).
 - **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission. The exception is the background video animation, which belongs to [4k SCREENSAVERS](https://www.youtube.com/@4kSCREENSAVERS).
 
@@ -163,7 +157,6 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 
 * Improvments in mobile views and responsiveness
 * Some style changes (animations, icons)
-* Fix image carousel on page load
 * Code refactor
 * React hook form (?)
 
@@ -184,7 +177,7 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
 [license-url]: https://img.shields.io/github/license/weebik/weebsite%2Ffrontend%2FLICENSE.TXT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/weebik/
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

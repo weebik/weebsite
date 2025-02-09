@@ -74,7 +74,7 @@ function AboutMe() {
             timelineData={aboutMeData.educationTimeline}
             icon={true}
           />
-          <div className="container">
+          <div className="photo-container">
             <ImageCarousel items={aboutMeData.hobbiesPhotos} />
           </div>
           <div className="container">
