@@ -14,7 +14,12 @@ function TimelineComponent({ timelineData, icon }: TimelineComponentProps) {
   return (
     <Timeline
       position="alternate"
-      sx={{ padding: "0", width: "100%", color: "white" }}
+      sx={{
+        padding: "0",
+        justifyContent: "center",
+        width: "100%",
+        color: "white",
+      }}
     >
       {timelineData.map((data, index) => (
         <TimelineItem key={index}>

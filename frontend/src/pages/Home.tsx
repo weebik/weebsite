@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "@mui/material";
 import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -8,6 +7,7 @@ import background from "../assets/background.mp4";
 import "../styles/home.css";
 import TechList from "../components/TechList";
 import endpoints, { downloadFile, fetchData } from "../utils/apiConfig";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   interface HomeData {
@@ -99,23 +99,23 @@ function Home() {
               <ul>
                 <li>
                   {homeData.aboutMeText.split("*")[0]}
-                  <Link href="/about-me" sx={linkStyle}>
+                  <NavLink to={"/about-me"} style={linkStyle}>
                     {homeData.aboutMeLink}
-                  </Link>
+                  </NavLink>
                   {homeData.aboutMeText.split("*")[1]}
                 </li>
                 <li>
                   {homeData.portfolioText.split("*")[0]}
-                  <Link href="/portfolio" sx={linkStyle}>
+                  <NavLink to={"/portfolio"} style={linkStyle}>
                     {homeData.portfolioLink}
-                  </Link>
+                  </NavLink>
                   {homeData.portfolioText.split("*")[1]}
                 </li>
                 <li>
                   {homeData.contactText.split("*")[0]}
-                  <Link href="/contact" sx={linkStyle}>
+                  <NavLink to={"/contact"} style={linkStyle}>
                     {homeData.contactLink}
-                  </Link>
+                  </NavLink>
                   {homeData.contactText.split("*")[1]}
                 </li>
               </ul>

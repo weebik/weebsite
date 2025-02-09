@@ -157,7 +157,6 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 
 * Improvments in mobile views and responsiveness
 * Some style changes (animations, icons)
-* Fix image carousel on page load
 * Code refactor
 * React hook form (?)
 
@@ -178,7 +177,7 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
 [license-url]: https://img.shields.io/github/license/weebik/weebsite%2Ffrontend%2FLICENSE.TXT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/weebik/
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

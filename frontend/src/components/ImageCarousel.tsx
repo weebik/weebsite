@@ -1,16 +1,24 @@
 import Carousel from "react-material-ui-carousel";
 import "../styles/imageCarousel.css";
 import BorderedImage from "./BorderedImage";
+import { useState } from "react";
 
 interface ImageCarouselProps {
   items: { url: string }[];
 }
 
 function ImageCarousel({ items }: ImageCarouselProps) {
+  const [firstImageLoaded, setFirstImageLoaded] = useState(false);
   return (
     <div className="carousel-container">
-      <div className="photo-clipper">
+      <img
+        src={items[0].url}
+        onLoad={() => setFirstImageLoaded(true)}
+        style={{ display: "none" }}
+      />
+      {firstImageLoaded ? (
         <Carousel
+          swipe={true}
           changeOnFirstRender={true}
           autoPlay={true}
           className="carousel-clipper"
@@ -20,7 +28,11 @@ function ImageCarousel({ items }: ImageCarouselProps) {
             <BorderedImage key={index} src={item.url} alt="Image not found" />
           ))}
         </Carousel>
-      </div>
+      ) : (
+        <div className="carousel-error">
+          Error: Cannot load carousel component
+        </div>
+      )}
     </div>
   );
 }
