@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { useLanguage } from "../hooks/useLanguage";
-import endpoints, { fetchData } from "../utils/apiConfig";
-import background from "../assets/background.mp4";
-import "../styles/contact.css";
+import { useState, useEffect } from 'react';
+import ContactForm from '../components/ContactForm';
+import Footer from '../components/Footer';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { useLanguage } from '../hooks/useLanguage';
+import endpoints, { fetchData } from '../utils/apiConfig';
+import background from '../assets/background.mp4';
+import '../styles/contact.css';
 
 function Contact() {
   interface ContactData {

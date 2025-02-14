@@ -1,5 +1,5 @@
-import "../styles/repoList.css";
-import { RepoProps } from "../types/repo.type";
+import '../styles/repoList.css';
+import { RepoProps } from '../types/repo.type';
 
 function Repo({ name, htmlUrl, imageUrl }: RepoProps) {
   return (

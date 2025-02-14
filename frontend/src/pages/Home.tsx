@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
-import Footer from "../components/Footer";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { useLanguage } from "../hooks/useLanguage";
-import background from "../assets/background.mp4";
-import "../styles/home.css";
-import TechList from "../components/TechList";
-import endpoints, { downloadFile, fetchData } from "../utils/apiConfig";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
+import Footer from '../components/Footer';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { useLanguage } from '../hooks/useLanguage';
+import background from '../assets/background.mp4';
+import '../styles/home.css';
+import TechList from '../components/TechList';
+import endpoints, { downloadFile, fetchData } from '../utils/apiConfig';
+import { NavLink } from 'react-router-dom';
 
 function Home() {
   interface HomeData {
@@ -47,11 +47,11 @@ function Home() {
   }
 
   const linkStyle = {
-    color: "rgba(158, 109, 200, 1)",
-    textDecoration: "none",
-    fontWeight: "bold",
-    "&:hover": {
-      textDecoration: "underline",
+    color: 'rgba(158, 109, 200, 1)',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    '&:hover': {
+      textDecoration: 'underline',
     },
   };
 
@@ -79,8 +79,8 @@ function Home() {
               <FileDownloadRoundedIcon
                 fontSize="large"
                 sx={{
-                  color: "white",
-                  "&:hover": { color: "white" },
+                  color: 'white',
+                  '&:hover': { color: 'white' },
                 }}
               />
               <div className="cv-download-text">{homeData.downloadButton}</div>
@@ -98,25 +98,25 @@ function Home() {
             <div className="text-content">
               <ul>
                 <li>
-                  {homeData.aboutMeText.split("*")[0]}
-                  <NavLink to={"/about-me"} style={linkStyle}>
+                  {homeData.aboutMeText.split('*')[0]}
+                  <NavLink to={'/about-me'} style={linkStyle}>
                     {homeData.aboutMeLink}
                   </NavLink>
-                  {homeData.aboutMeText.split("*")[1]}
+                  {homeData.aboutMeText.split('*')[1]}
                 </li>
                 <li>
-                  {homeData.portfolioText.split("*")[0]}
-                  <NavLink to={"/portfolio"} style={linkStyle}>
+                  {homeData.portfolioText.split('*')[0]}
+                  <NavLink to={'/portfolio'} style={linkStyle}>
                     {homeData.portfolioLink}
                   </NavLink>
-                  {homeData.portfolioText.split("*")[1]}
+                  {homeData.portfolioText.split('*')[1]}
                 </li>
                 <li>
-                  {homeData.contactText.split("*")[0]}
-                  <NavLink to={"/contact"} style={linkStyle}>
+                  {homeData.contactText.split('*')[0]}
+                  <NavLink to={'/contact'} style={linkStyle}>
                     {homeData.contactLink}
                   </NavLink>
-                  {homeData.contactText.split("*")[1]}
+                  {homeData.contactText.split('*')[1]}
                 </li>
               </ul>
             </div>

@@ -1,39 +1,39 @@
-const axios = require("axios");
+const axios = require('axios');
 
 module.exports = ({ env }) => [
-  "strapi::errors",
+  'strapi::errors',
   {
-    name: "strapi::security",
+    name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:"],
-          "default-src": ["'self'"],
-          "img-src": [
+          'connect-src': ["'self'", 'https:'],
+          'default-src': ["'self'"],
+          'img-src': [
             "'self'",
-            "data:",
-            "blob:",
-            "market-assets.strapi.io",
-            env("SUPABASE_URL"),
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            env('SUPABASE_URL'),
           ],
-          "media-src": [
+          'media-src': [
             "'self'",
-            "data:",
-            "blob:",
-            "market-assets.strapi.io",
-            env("SUPABASE_URL"),
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            env('SUPABASE_URL'),
           ],
         },
       },
     },
   },
-  "strapi::cors",
-  "strapi::poweredBy",
-  "strapi::logger",
-  "strapi::query",
-  "strapi::body",
-  "strapi::session",
-  "strapi::favicon",
-  "strapi::public",
+  'strapi::cors',
+  'strapi::poweredBy',
+  'strapi::logger',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
 ];

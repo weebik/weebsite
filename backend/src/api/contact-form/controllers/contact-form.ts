@@ -2,34 +2,34 @@
  * contact-form controller
  */
 
-import { factories } from "@strapi/strapi";
-import nodemailer from "nodemailer";
-import axios from "axios";
+import { factories } from '@strapi/strapi';
+import nodemailer from 'nodemailer';
+import axios from 'axios';
 
 export default factories.createCoreController(
-  "api::contact-form.contact-form",
+  'api::contact-form.contact-form',
   ({ strapi }) => ({
     async create(ctx) {
       const { captcha, ...formData } = ctx.request.body.data;
 
       try {
         const captchaResponse = await axios.post(
-          "https://www.google.com/recaptcha/api/siteverify",
+          'https://www.google.com/recaptcha/api/siteverify',
           null,
           {
             params: {
               secret: process.env.RECAPTCHA_SECRET_KEY,
               response: captcha,
             },
-          }
+          },
         );
 
         if (!captchaResponse.data.success) {
-          return ctx.badRequest("Invalid CAPTCHA verification");
+          return ctx.badRequest('Invalid CAPTCHA verification');
         }
 
         const transporter = nodemailer.createTransport({
-          service: "gmail",
+          service: 'gmail',
           auth: {
             user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_PASS,
@@ -55,9 +55,9 @@ export default factories.createCoreController(
         const response = await super.create(ctx);
         return response;
       } catch (error) {
-        console.error("Error while processing form:", error);
-        return ctx.internalServerError("Error while processing form");
+        console.error('Error while processing form:', error);
+        return ctx.internalServerError('Error while processing form');
       }
     },
-  })
+  }),
 );

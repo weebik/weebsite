@@ -1,5 +1,5 @@
-import "../styles/skills.css";
-import { SkillData } from "../types/skill.type";
+import '../styles/skills.css';
+import { SkillData } from '../types/skill.type';
 
 export default function Skill({ name, imgSrc }: SkillData) {
   return (

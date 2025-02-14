@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
@@ -10,7 +9,6 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 </div>
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -31,7 +29,6 @@
     <a href="https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=">Request Feature</a>
   </p>
 </div>
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -57,17 +54,16 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 This project is built with React framework using TypeScript. Some components are from MaterialUI and the styles are written in pure css. The backend and CMS is based on Strapi with various plugins like Internationalization and EmailPlugin. Frontend is deployed on Vercel, backend is deployed on Render. The backend has been linked to Supabase Database that stores content of the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ### Built With
+
 [![React][React.js]][React-url]
 [![Typescript][Typescript]][Typescript-url]
 ![CSS][CSS3]
@@ -109,39 +105,45 @@ weebsite/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
+
 Thank you for your interest in contributing to my project! Your feedback and suggestions are invaluable in making this app better. Below are some ways you can contribute:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Reporting Issues  
-If you find any bugs or issues, please let me know by creating a [GitHub issue](https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=). When reporting, try to include:  
-- A clear description of the issue.  
-- Steps to reproduce the problem.  
-- Screenshots or error messages, if applicable.  
+### Reporting Issues
+
+If you find any bugs or issues, please let me know by creating a [GitHub issue](https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=). When reporting, try to include:
+
+- A clear description of the issue.
+- Steps to reproduce the problem.
+- Screenshots or error messages, if applicable.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Suggesting Improvements  
-Your ideas on how to improve the project are always welcome! Feel free to:  
-- Suggest ways to optimize the code for better performance.  
-- Propose changes to make the code more readable and maintainable.  
+### Suggesting Improvements
+
+Your ideas on how to improve the project are always welcome! Feel free to:
+
+- Suggest ways to optimize the code for better performance.
+- Propose changes to make the code more readable and maintainable.
 - Recommend new features or enhancements that align with the project's goals. You can do that via [Request feature](https://github.com/weebik/weebsite/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=) form.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
+
 - Backend uses the **MIT Expat** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/backend/LICENSE.txt).
 - Frontend uses the **MIT** license. Details in [LICENSE](https://github.com/weebik/weebsite/blob/main/frontend/LICENSE.txt).
 - **The content of the site (e.g. texts, media) is my property** and cannot be copied without my permission. The exception is the background video animation, which belongs to [4k SCREENSAVERS](https://www.youtube.com/@4kSCREENSAVERS).
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Krystian Ćwikliński - krystian.samaa@gmail.com
@@ -150,22 +152,20 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Todo
 
-* Improvments in mobile views and responsiveness
-* Some style changes (animations, icons)
-* Code refactor
-* React hook form (?)
+- Improvments in mobile views and responsiveness
+- Some style changes (animations, icons)
+- Code refactor
+- React hook form (?)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/weebik/weebsite.svg?style=for-the-badge
 [contributors-url]: https://github.com/weebik/weebsite/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/weebik/weebiste.svg?style=for-the-badge
@@ -190,9 +190,9 @@ Project Link: [https://github.com/weebik/weebsite](https://github.com/weebik/wee
 [Strapi-url]: https://strapi.io
 [MUI]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
 [MUI-url]: https://mui.com/material-ui/
-[Vercel]:https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
-[Vercel-url]:https://vercel.com
-[Render]:https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white
-[Render-url]:https://render.com
-[Supabase]:https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white
-[Supabase-url]:https://supabase.com
+[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com
+[Render]: https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white
+[Render-url]: https://render.com
+[Supabase]: https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white
+[Supabase-url]: https://supabase.com

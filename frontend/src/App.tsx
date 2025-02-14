@@ -1,6 +1,6 @@
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Layout from "./layout/Layout";
-import routes from "./routes/routes";
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import Layout from './layout/Layout';
+import routes from './routes/routes';
 
 function App() {
   const location = useLocation();

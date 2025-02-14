@@ -13,27 +13,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout repo
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # 2. Setup Node.js environment
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
+      # 2. Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-   # 3. Install dependencies and fix frontend issues
-    - name: Fix and lint frontend
-      working-directory: ./frontend
-      run: |
-        npm install
-        npm run lint:fix
-        npm run format
+      # 3. Install dependencies and fix frontend issues
+      - name: Fix and lint frontend
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run lint:fix
+          npm run format
 
-    # 4. Install dependencies and fix backend issues
-    - name: Fix and format backend
-      working-directory: ./backend
-      run: |
-        npm install
-        npm run format
+      # 4. Install dependencies and fix backend issues
+      - name: Fix and format backend
+        working-directory: ./backend
+        run: |
+          npm install
+          npm run format
+
+      # 5. Pretter check
+      - name: Prettier check
+        working-directory: ./
+        run: |
+          npm run format

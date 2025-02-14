@@ -1,14 +1,14 @@
-import { useLanguage } from "../hooks/useLanguage";
-import { useEffect, useState } from "react";
-import endpoints, { fetchData } from "../utils/apiConfig";
-import ImageCarousel from "../components/ImageCarousel";
-import BorderedImage from "../components/BorderedImage";
-import TimelineComponent from "../components/TimelineComponent";
-import Footer from "../components/Footer";
-import LoadingSpinner from "../components/LoadingSpinner";
-import background from "../assets/background.mp4";
-import { TimelineData } from "../types/timeline.type";
-import "../styles/aboutMe.css";
+import { useLanguage } from '../hooks/useLanguage';
+import { useEffect, useState } from 'react';
+import endpoints, { fetchData } from '../utils/apiConfig';
+import ImageCarousel from '../components/ImageCarousel';
+import BorderedImage from '../components/BorderedImage';
+import TimelineComponent from '../components/TimelineComponent';
+import Footer from '../components/Footer';
+import LoadingSpinner from '../components/LoadingSpinner';
+import background from '../assets/background.mp4';
+import { TimelineData } from '../types/timeline.type';
+import '../styles/aboutMe.css';
 
 function AboutMe() {
   interface AboutMeData {

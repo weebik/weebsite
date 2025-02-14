@@ -1,5 +1,5 @@
-import "../styles/footer.css";
-import MediaLinks from "./MediaLinks";
+import '../styles/footer.css';
+import MediaLinks from './MediaLinks';
 
 function Footer() {
   return (

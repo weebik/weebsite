@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Repo from "./Repo";
-import { RepoData } from "../types/repo.type";
-import "../styles/repoList.css";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import Repo from './Repo';
+import { RepoData } from '../types/repo.type';
+import '../styles/repoList.css';
+import axios from 'axios';
 
 function RepoList() {
   const [repos, setRepos] = useState<RepoData[]>([]);
@@ -11,11 +11,11 @@ function RepoList() {
     const fetchRepos = async () => {
       try {
         const response = await axios.get<RepoData[]>(
-          "https://api.github.com/users/weebik/repos"
+          'https://api.github.com/users/weebik/repos',
         );
         setRepos(response.data);
       } catch (error) {
-        console.error("Error fetching repo data: ", error);
+        console.error('Error fetching repo data: ', error);
       }
     };
 
