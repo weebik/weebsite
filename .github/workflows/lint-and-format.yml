@@ -42,4 +42,5 @@ jobs:
       - name: Prettier check
         working-directory: ./
         run: |
+          npm install
           npm run format
