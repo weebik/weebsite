@@ -1,6 +1,6 @@
 body {
   min-height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(90deg, var(--sec4) 0%, rgba(21, 28, 53, 1) 100%);
   margin: 0;
   display: flex;

@@ -1,4 +1,4 @@
-import { techs } from "../consts/techs";
+import { techs } from '../consts/techs';
 
 function TechList() {
   return (

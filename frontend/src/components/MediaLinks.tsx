@@ -1,11 +1,11 @@
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import "../styles/mediaLinks.css";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import '../styles/mediaLinks.css';
 
 function MediaLinks() {
-  const style = { cursor: "pointer", "&:hover": { color: "var(--pri2)" } };
+  const style = { cursor: 'pointer', '&:hover': { color: 'var(--pri2)' } };
   return (
     <div className="media-links">
       <a

@@ -1,6 +1,6 @@
-import "../styles/skills.css";
-import { SkillDataProps } from "../types/skill.type";
-import Skill from "./Skill";
+import '../styles/skills.css';
+import { SkillDataProps } from '../types/skill.type';
+import Skill from './Skill';
 
 function SkillsList({ skillData }: SkillDataProps) {
   return (

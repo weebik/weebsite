@@ -1,7 +1,7 @@
-import Carousel from "react-material-ui-carousel";
-import "../styles/imageCarousel.css";
-import BorderedImage from "./BorderedImage";
-import { useState } from "react";
+import Carousel from 'react-material-ui-carousel';
+import '../styles/imageCarousel.css';
+import BorderedImage from './BorderedImage';
+import { useState } from 'react';
 
 interface ImageCarouselProps {
   items: { url: string }[];
@@ -14,7 +14,7 @@ function ImageCarousel({ items }: ImageCarouselProps) {
       <img
         src={items[0].url}
         onLoad={() => setFirstImageLoaded(true)}
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
       />
       {firstImageLoaded ? (
         <Carousel
@@ -22,7 +22,7 @@ function ImageCarousel({ items }: ImageCarouselProps) {
           changeOnFirstRender={true}
           autoPlay={true}
           className="carousel-clipper"
-          sx={{ height: "100%", width: "100%", padding: "0", margin: "0" }}
+          sx={{ height: '100%', width: '100%', padding: '0', margin: '0' }}
         >
           {items.map((item: { url: string }, index) => (
             <BorderedImage key={index} src={item.url} alt="Image not found" />

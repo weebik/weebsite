@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
-import { useLanguage } from "../hooks/useLanguage";
-import endpoints, { fetchData } from "../utils/apiConfig";
-import TimelineComponent from "../components/TimelineComponent";
-import Footer from "../components/Footer";
-import LoadingSpinner from "../components/LoadingSpinner";
-import RepoList from "../components/RepoList";
-import SkillsList from "../components/SkillsList";
-import { SkillData } from "../types/skill.type";
-import { TimelineData } from "../types/timeline.type";
-import background from "../assets/background.mp4";
-import "../styles/portfolio.css";
+import { useState, useEffect } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
+import endpoints, { fetchData } from '../utils/apiConfig';
+import TimelineComponent from '../components/TimelineComponent';
+import Footer from '../components/Footer';
+import LoadingSpinner from '../components/LoadingSpinner';
+import RepoList from '../components/RepoList';
+import SkillsList from '../components/SkillsList';
+import { SkillData } from '../types/skill.type';
+import { TimelineData } from '../types/timeline.type';
+import background from '../assets/background.mp4';
+import '../styles/portfolio.css';
 
 function Portfolio() {
   interface PortfolioData {
@@ -25,13 +25,13 @@ function Portfolio() {
   const { language } = useLanguage();
 
   const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(
-    null
+    null,
   );
 
   useEffect(() => {
     const fetchPortfolioData = async () => {
       const data = await fetchData<PortfolioData>(
-        endpoints.portfolio(language)
+        endpoints.portfolio(language),
       );
       setPortfolioData(data);
     };

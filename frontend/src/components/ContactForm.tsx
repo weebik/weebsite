@@ -1,22 +1,28 @@
-import { useState } from "react";
-import { TextField, Box, Stack, Button, CircularProgress } from "@mui/material";
-import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import "../styles/contactForm.css";
-import MediaLinks from "./MediaLinks";
-import ReCAPTCHA from "react-google-recaptcha";
-import { ContactFormProps } from "../types/contactForm.type";
+import { useRef, useState } from 'react';
+import { TextField, Box, Stack, Button, CircularProgress } from '@mui/material';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import '../styles/contactForm.css';
+import MediaLinks from './MediaLinks';
+import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
+import { ContactFormProps } from '../types/contactForm.type';
 import {
   sanitizeInput,
   validateEmail,
-  submitContactForm,
-} from "../utils/formUtils";
-import { inputStyle } from "../consts/inputStyle";
+} from '../utils/formUtils';
+import { inputStyle } from '../consts/inputStyle';
+
+
+const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+const CAPTCHA_SITE_KEY = import.meta.env.VITE_CAPTCHA_SITE_KEY;
 
 function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [errors, setErrors] = useState({
     name: false,
@@ -27,6 +33,8 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -49,24 +57,35 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
     if (Object.values(newErrors).some((error) => error)) return;
 
     setIsSubmitting(true);
+
     const sanitizedData = {
       name: sanitizeInput(formData.name),
       email: sanitizeInput(formData.email),
       message: sanitizeInput(formData.message),
     };
 
-    await submitContactForm(
-      sanitizedData,
-      captchaToken,
-      () => {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-        setCaptchaToken(null);
-      },
-      (errorMessage) => {
-        alert(errorMessage);
-      }
-    );
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: sanitizedData.name,
+          reply_to: sanitizedData.email,
+          message: sanitizedData.message,
+          'g-recaptcha-response': captchaToken,
+        },
+        PUBLIC_KEY,
+      );
+
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+      setCaptchaToken(null);
+      captchaRef.current?.reset();
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send message. Please try again later.');
+    }
+
     setIsSubmitting(false);
   };
 
@@ -85,7 +104,7 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
             value={formData.name}
             onChange={handleChange}
             error={errors.name}
-            helperText={errors.name ? "Name is required" : ""}
+            helperText={errors.name ? 'Name is required' : ''}
           />
           <TextField
             label="Email"
@@ -98,7 +117,7 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
             value={formData.email}
             onChange={handleChange}
             error={errors.email}
-            helperText={errors.email ? "Invalid email address" : ""}
+            helperText={errors.email ? 'Invalid email address' : ''}
           />
           <TextField
             label={messageLabel}
@@ -112,14 +131,14 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
             value={formData.message}
             onChange={handleChange}
             error={errors.message}
-            helperText={errors.message ? "Message cannot be empty" : ""}
+            helperText={errors.message ? 'Message cannot be empty' : ''}
           />
           <Box
             display="flex"
             alignItems="center"
             justifyContent="space-between"
             sx={{
-              padding: "0 2vw",
+              padding: '0 2vw',
             }}
           >
             <MediaLinks />
@@ -128,27 +147,27 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
                 sx={{
-                  backgroundColor: "var(--pri2)",
-                  borderRadius: "1em",
-                  color: "white",
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": { color: "var(--pri1)", scale: "1.1" },
+                  backgroundColor: 'var(--pri2)',
+                  borderRadius: '1em',
+                  color: 'white',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': { color: 'var(--pri1)', scale: '1.1' },
                 }}
               >
                 {isSubmitting ? (
-                  <CircularProgress size={35} sx={{ color: "white" }} />
+                  <CircularProgress size={35} sx={{ color: 'white' }} />
                 ) : (
                   <SendRoundedIcon
                     fontSize="large"
                     sx={{
-                      cursor: "pointer",
+                      cursor: 'pointer',
                     }}
                   />
                 )}
               </Button>
             ) : (
               <ReCAPTCHA
-                sitekey="6LfoJLQqAAAAAHuk6qJNseBto83_YAQ-RAyzObfR"
+                sitekey={CAPTCHA_SITE_KEY}
                 onChange={handleCaptchaChange}
                 theme="dark"
                 size="normal"

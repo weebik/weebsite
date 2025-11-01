@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-export type language = "en" | "pl";
+export type language = 'en' | 'pl';
 
 export interface LanguageContextProps {
   language: language;

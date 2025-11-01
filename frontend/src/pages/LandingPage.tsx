@@ -1,20 +1,20 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useLanguage } from "../hooks/useLanguage";
-import Footer from "../components/Footer";
-import background from "../assets/background.mp4";
-import avatar from "../assets/avatar.png";
-import "../styles/landingPage.css";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useLanguage } from '../hooks/useLanguage';
+import Footer from '../components/Footer';
+import background from '../assets/background.mp4';
+import avatar from '../assets/avatar.png';
+import '../styles/landingPage.css';
 
 function LandingPage() {
   const { language } = useLanguage();
   const translations = {
     pl: {
-      title: "WITAJ",
-      text: "Ta strona jest moim osobistym CV",
+      title: 'WITAJ',
+      text: 'Ta strona jest moim osobistym CV',
     },
     en: {
-      title: "WELCOME",
-      text: "This website is my personal CV",
+      title: 'WELCOME',
+      text: 'This website is my personal CV',
     },
   };
 
@@ -46,11 +46,11 @@ function LandingPage() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 1 }}
             style={{
-              background: "linear-gradient(45deg, #85A3AB, #9E6DC8)",
-              backgroundSize: "400% 400%",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-              animation: "gradient-animation 5s ease infinite",
+              background: 'linear-gradient(45deg, #85A3AB, #9E6DC8)',
+              backgroundSize: '400% 400%',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              animation: 'gradient-animation 5s ease infinite',
             }}
           >
             <img
@@ -71,11 +71,11 @@ function LandingPage() {
               exit="exit"
               variants={textAnimation}
               style={{
-                background: "linear-gradient(45deg, #85A3AB, #9E6DC8)",
-                backgroundSize: "400% 400%",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-                animation: "gradient-animation 5s ease infinite",
+                background: 'linear-gradient(45deg, #85A3AB, #9E6DC8)',
+                backgroundSize: '400% 400%',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                animation: 'gradient-animation 5s ease infinite',
               }}
             >
               <div className="landing-title">
@@ -92,7 +92,7 @@ function LandingPage() {
               variants={textAnimation}
             >
               <div className="landing-text">
-                {translations[language].text.split("").map((char, index) => (
+                {translations[language].text.split('').map((char, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0 }}
