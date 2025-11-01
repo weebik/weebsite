@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { ReactNode, useEffect, useState } from 'react';
 import { AnimatePresence, motion, Spring } from 'framer-motion';
 import '../styles/navBar.css';

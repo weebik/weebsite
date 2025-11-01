@@ -1,16 +1,22 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { TextField, Box, Stack, Button, CircularProgress } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import '../styles/contactForm.css';
 import MediaLinks from './MediaLinks';
 import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
 import { ContactFormProps } from '../types/contactForm.type';
 import {
   sanitizeInput,
   validateEmail,
-  submitContactForm,
 } from '../utils/formUtils';
 import { inputStyle } from '../consts/inputStyle';
+
+
+const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+const CAPTCHA_SITE_KEY = import.meta.env.VITE_CAPTCHA_SITE_KEY;
 
 function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
   const [formData, setFormData] = useState({
@@ -27,6 +33,8 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -49,24 +57,35 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
     if (Object.values(newErrors).some((error) => error)) return;
 
     setIsSubmitting(true);
+
     const sanitizedData = {
       name: sanitizeInput(formData.name),
       email: sanitizeInput(formData.email),
       message: sanitizeInput(formData.message),
     };
 
-    await submitContactForm(
-      sanitizedData,
-      captchaToken,
-      () => {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-        setCaptchaToken(null);
-      },
-      (errorMessage) => {
-        alert(errorMessage);
-      },
-    );
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: sanitizedData.name,
+          reply_to: sanitizedData.email,
+          message: sanitizedData.message,
+          'g-recaptcha-response': captchaToken,
+        },
+        PUBLIC_KEY,
+      );
+
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+      setCaptchaToken(null);
+      captchaRef.current?.reset();
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send message. Please try again later.');
+    }
+
     setIsSubmitting(false);
   };
 
@@ -148,7 +167,7 @@ function ContactForm({ text, nameLabel, messageLabel }: ContactFormProps) {
               </Button>
             ) : (
               <ReCAPTCHA
-                sitekey="6LfoJLQqAAAAAHuk6qJNseBto83_YAQ-RAyzObfR"
+                sitekey={CAPTCHA_SITE_KEY}
                 onChange={handleCaptchaChange}
                 theme="dark"
                 size="normal"

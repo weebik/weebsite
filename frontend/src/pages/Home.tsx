@@ -7,7 +7,7 @@ import background from '../assets/background.mp4';
 import '../styles/home.css';
 import TechList from '../components/TechList';
 import endpoints, { downloadFile, fetchData } from '../utils/apiConfig';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 
 function Home() {
   interface HomeData {

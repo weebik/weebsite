@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Fab, Box, Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import routes from '../routes/routes';
 import { useLanguage } from '../hooks/useLanguage';
 import english from '../assets/english.svg';
